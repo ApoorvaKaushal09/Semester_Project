@@ -6,10 +6,10 @@ const path = require('path')
 router.get('/', (req,res) => {
     res.render("home", {route : '/'})
 })
-router.get('/flats', (req,res) => {
-    res.render("flats", {route : 'flats'})
+// router.get('/flats', (req,res) => {
+//     res.render("flats", {route : 'flats'})
     
-})
+// })
 router.get('/sell', (req,res) => {
     res.render("sell", {route : 'sell'})
    

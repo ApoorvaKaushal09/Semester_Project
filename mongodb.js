@@ -26,5 +26,57 @@ const SignupSchema = new mongoose.Schema({
     }
 
 });
+
+const flatSchema = new mongoose.Schema({
+    description: {
+      type: String,
+      required: true,
+    },
+  
+    fname: {
+      type: String,
+      required: true,
+    },
+  
+    fcontact: {
+      type: String,
+      required: true,
+    },
+  
+    floc: {
+      type: String,
+      required: true,
+    },
+  
+    fstate: {
+      type: String,
+      required: true,
+    },
+  
+    fcity: {
+      type: String,
+      required: true,
+    },
+  
+    ftype: {
+      type: String,
+      required: true,
+    },
+  
+    furnish: {
+      type: String,
+      required: true,
+    },
+  
+    size: {
+      type: String,
+      required: true,
+    },
+  });
+
+
+
+
 const collection = new mongoose.model("userSignup", SignupSchema)
-module.exports = collection;
+const collection2 = new mongoose.model("flatDetails", flatSchema)
+module.exports = {collection, collection2};

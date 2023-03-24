@@ -1,30 +1,30 @@
 <%- include("partials/header"); -%> 
-    <div class="card-group">
-      <div class="card m-2">
-        <img class="card-img-top" src="../images/blog-1.png" alt="Card image cap">
-        <div class="card-body border border-2">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  <div class="container">
+    <% x.forEach(element => { %>
+      <div class="wrapper">
+        <div class="product-img">
+          <img src="http://bit.ly/2tMBBTd" height="420" width="327">
+        </div>
+        <div class="product-info">
+          <div class="product-text">
+            <h1>Harvest Vase</h1>
+            <h2>by studio and friends</h2>
+            <p>Harvest Vases are a reinterpretation<br> of peeled fruits and vegetables as<br> functional objects. The surfaces<br> appear to be sliced and pulled aside,<br> allowing room for growth. </p>
+          </div>
+          <div class="product-price-btn">
+            <p><span>78</span>$</p>
+            <button type="button">buy now</button>
+          </div>
         </div>
       </div>
-      <div class="card m-2">
-        <img class="card-img-top" src="../images/blog-2.jpg" alt="Card image cap">
-        <div class="card-body border border-2">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-      <div class="card m-2">
-        <img class="card-img-top" src="../images/blog-3.jpg" alt="Card image cap">
-        <div class="card-body border border-2">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
+    
+     <!-- <h1>Hi</h1> -->
+    <% }) %>
+  </div>
+  
+
+    
+    
  <!-- 
     - #FOOTER
   -->

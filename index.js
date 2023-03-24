@@ -4,7 +4,7 @@ const ejs = require("ejs");
 const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
-const collection = require("./mongodb")
+const {collection, collection2} = require("./mongodb")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -17,9 +17,38 @@ app.use(express.static(path.join(__dirname, "public")))
 // app.use('/signup',require(path.join(__dirname, 'routes/blog.js')))
 app.use('/' , require(path.join(__dirname, 'routes/blog.js')))
 
-app.use('/flats' , require(path.join(__dirname, 'routes/blog.js')))
+// app.use('/flats' , require(path.join(__dirname, 'routes/blog.js')))
 
+app.get('/flats',(req,res)=>  {
+  collection2.find({}).then((x) =>{
+    res.render("flats", {x})
+  }).catch((y) => {
+    console.log(y)
+  })
+})
 app.use('/sell' , require(path.join(__dirname, 'routes/blog.js')))
+app.post("/sell", async (req, res) => {
+  const data = {
+    description: req.body.description,
+    fname: req.body.fname,
+    fcontact: req.body.fcontact,
+    floc: req.body.floc,
+    fstate: req.body.fstate,
+    fcity: req.body.fcity,
+    ftype: req.body.ftype,
+    furnish: req.body.furnish,
+    size: req.body.size,
+  };
+
+  await collection2.insertMany([data]);
+
+  res.render("home");
+});
+
+
+
+
+
 // app.get('/signup', (req,res) => {
 //     res.render("signup", {route : 'signup'})
 // })

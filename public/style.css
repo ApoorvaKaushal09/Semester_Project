@@ -1439,7 +1439,7 @@ button, a { transition: var(--transition); }
 
 
 .wrapper {
-  height: 320px;
+  height: 450px;
   width: 100%;
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
@@ -1451,7 +1451,7 @@ button, a { transition: var(--transition); }
 
 .product-img {
   float: left;
-  height: 420px;
+  height: 450px;
   width: 327px;
 }
 
@@ -1461,20 +1461,20 @@ button, a { transition: var(--transition); }
 
 .product-info {
   float: left;
-  height: 420px;
-  width: 327px;
+  height: 450px;
+  width: 400px;
   border-radius: 0 7px 10px 7px;
   background-color: #ffffff;
 }
 
 .product-text {
-  height: 300px;
-  width: 327px;
+  height: 100px;
+  width: 700px;
 }
 
 .product-text h1 {
   margin: 0 0 0 38px;
-  padding-top: 52px;
+  padding-top: 22px;
   font-size: 34px;
   color: #474747;
 }
@@ -1485,7 +1485,7 @@ button, a { transition: var(--transition); }
 }
 
 .product-text h2 {
-  margin: 0 0 47px 38px;
+  margin: 0 0 10px 38px;
   font-size: 13px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -1495,27 +1495,27 @@ button, a { transition: var(--transition); }
 }
 
 .product-text p {
-  height: 125px;
+  /* height: 125px; */
   margin: 0 0 0 38px;
   font-family: 'Playfair Display', serif;
   color: #8d8d8d;
   line-height: 1.7em;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: lighter;
   overflow: hidden;
 }
 
 .product-price-btn {
   height: 103px;
-  width: 327px;
-  margin-top: 17px;
+  width: 800px;
+  margin-top: 258px;
   position: relative;
 }
 
 .product-price-btn p {
   display: inline-block;
   position: absolute;
-  top: -13px;
+  /* top: -13px; */
   height: 50px;
   font-family: 'Trocchi', serif;
   margin: 0 0 0 38px;
@@ -1524,33 +1524,106 @@ button, a { transition: var(--transition); }
   color: #474747;
 }
 
-span {
+.product-price-btn span {
   display: inline-block;
   height: 50px;
   font-family: 'Suranna', serif;
   font-size: 34px;
 }
-
+strong{
+  color: black;
+}
 .product-price-btn button {
   float: right;
   display: inline-block;
   height: 50px;
   width: 176px;
-  margin: 0 40px 0 16px;
+  margin: 0 150px 0 16px;
   box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
   font-family: 'Raleway', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.2em;
   color: #ffffff;
-  background-color: #9cebd5;
+  background-color: #80e9cb;
   cursor: pointer;
   outline: none;
 }
 
 .product-price-btn button:hover {
   background-color: #79b0a1;
+}
+
+
+.topnav {
+  /* background-color: white; */
+  overflow: hidden;
+}
+
+#leftii {
+  float: left;
+  color: White;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: larger;
+}
+
+#leftii img {
+  /* width: 200px; */
+  height: 50px;
+  overflow: hidden;
+  margin-top: 2px;
+  margin-left: 50px;
+  margin-bottom: 2px;
+  border: 2px;
+  border-style: solid;
+}
+
+.topnav a {
+  float: right;
+  color: #080808;
+  font-style: normal;
+  font-weight: bolder;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+#leftii a {
+  color: white;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+#leftii span {
+  width: 15px;
+  background-color: rgb(216, 249, 145);
+  border-color: rgb(234, 234, 247);
+  border-style: solid;
+  border-collapse: collapse;
+}
+#leftii a:hover {
+  background-color: white;
+  /* color: #080808; */
+}
+
+.topnav a:hover {
+  /* background-color: rgb(10, 10, 10); */
+  /* color: rgb(253, 252, 252); */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  /* text-shadow: 1px 1px hsl(0, 0%, 0%);
+  font-weight: bolder; */
+}
+
+.signup a{
+  color: white;
+  font-weight: 100;
 }

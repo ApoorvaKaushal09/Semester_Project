@@ -3,22 +3,21 @@
     <% x.forEach(element => { %>
       <div class="wrapper">
         <div class="product-img">
-          <img src="http://bit.ly/2tMBBTd" height="420" width="327">
+          <img src="https://media.istockphoto.com/id/1384642884/photo/the-evening-sun-is-reflected-in-the-modern-glass-facade-with-balconies.jpg?b=1&s=170667a&w=0&k=20&c=9cnDfc9tNIAcgvuGHZkST7CP-dFaNXutX8OpzVO1jEA=" height="450" width="327">
         </div>
         <div class="product-info">
           <div class="product-text">
-            <h1>Harvest Vase</h1>
-            <h2>by studio and friends</h2>
-            <p>Harvest Vases are a reinterpretation<br> of peeled fruits and vegetables as<br> functional objects. The surfaces<br> appear to be sliced and pulled aside,<br> allowing room for growth. </p>
+            <h1><%= element.fcity %></h1>
+            <h2><%= element.fname %></h2>
+            <p>  <%= element.description %><br><strong>Address:</strong> <%= element.floc %> <br> <strong>Contact: </strong><%= element.fcontact %> <br><strong>Availibility: </strong> <%= element.ftype %> <br> <strong>City: </strong><%= element.fcity %> <strong> , State:</strong><%= element.fstate %> <br> <strong>Furnished: </strong> <%= element.furnish %> <br><strong>Size</strong> <%= element.size %></p>
+            <p></p>
           </div>
           <div class="product-price-btn">
-            <p><span>78</span>$</p>
-            <button type="button">buy now</button>
+            <p><span><%= element.fprice %></span>$</p>
+            <button type="button">View Flat</button>
           </div>
         </div>
       </div>
-    
-     <!-- <h1>Hi</h1> -->
     <% }) %>
   </div>
   

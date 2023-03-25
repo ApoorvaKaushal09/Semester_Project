@@ -57,6 +57,11 @@ const flatSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+
+    fprice:{
+      type:Number,
+      required: true
+    },
   
     ftype: {
       type: String,

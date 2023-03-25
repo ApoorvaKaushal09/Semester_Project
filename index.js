@@ -21,7 +21,7 @@ app.use('/' , require(path.join(__dirname, 'routes/blog.js')))
 
 app.get('/flats',(req,res)=>  {
   collection2.find({}).then((x) =>{
-    res.render("flats", {x})
+    res.render("flats", {x,route:'/flats'})
   }).catch((y) => {
     console.log(y)
   })
@@ -35,6 +35,7 @@ app.post("/sell", async (req, res) => {
     floc: req.body.floc,
     fstate: req.body.fstate,
     fcity: req.body.fcity,
+    fprice: req.body.fprice,
     ftype: req.body.ftype,
     furnish: req.body.furnish,
     size: req.body.size,
@@ -92,7 +93,7 @@ app.post("/sell", async (req, res) => {
 //   });
 
 app.get("/signup", function (req, res) {
-  res.render("signup");
+  res.render("signup", {route : '/signup'});
 });
 
 // Handling user signup
@@ -109,7 +110,7 @@ app.post("/signup", async (req, res) => {
 
 //Showing login form
 app.get("/login", function (req, res) {
-  res.render("login");
+  res.render("login",{route:'/login'});
 });
 app.post("/login", async function(req, res){
   try {

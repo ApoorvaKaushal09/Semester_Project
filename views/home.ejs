@@ -1,30 +1,35 @@
 <%- include("partials/header"); -%> 
   <main>
     <article>
-
-      <!-- 
-        - #HERO
-      -->
-      
       <section class="hero" id="home" style="padding-top: 50px;">
         <div class="container">
           <div class="hero-content">
 
             <p class="hero-subtitle">
-              <ion-icon style="margin-top: -30px;" name="home"></ion-icon>
+              <ion-icon name="home"></ion-icon>
 
               <span>Real Estate Agency</span>
             </p>
-            <h2 class="h1 hero-title">Looking for Flats?</h2>
+            <h2 class="h1 hero-title">
+              Looking for an easy 
+              <p>
+
+              </p>
+              way to buy and <p>
+
+              </p> sell/rent flats?
+            </h2>
            
-            <p class="hero-text">
-             
-            </p>
+            
           
             <h2 class="h1 hero-title">Abode is Here!!!</h2>
 
+            <p class="hero-text">
+             
 
-            <button class="btn">Make An Enquiry</button>
+
+            </p>
+            <a href="#contact"><button class="btn">Contact Us</button></a>
 
           </div>
 
@@ -56,7 +61,7 @@
 
           <figure class="about-banner">
             <img src="../images/about-banner-1.png" alt="House interior">
-            <img src="../images/about-banner-2.jpg" alt="House interior" class="abs-img">
+            <!-- <img src="../images/about-banner-2.jpg" alt="House interior" class="abs-img"> -->
           </figure>
 
           <div class="about-content">
@@ -144,7 +149,7 @@
                 </div>
 
                 <h3 class="h3 card-title">
-                  <a href="#">Buy a home</a>
+                  <a href="/flats">Buy a home</a>
                 </h3>
 
                 <p class="card-text">
@@ -152,7 +157,7 @@
                   to call home.
                 </p>
 
-                <a href="#" class="card-link">
+                <a href="/flats" class="card-link">
                   <span>Find A Home</span>
 
                   <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -169,7 +174,7 @@
                 </div>
 
                 <h3 class="h3 card-title">
-                  <a href="#">Rent a home</a>
+                  <a href="/sell">Rent a home</a>
                 </h3>
 
                 <p class="card-text">
@@ -177,7 +182,7 @@
                   to call home.
                 </p>
 
-                <a href="#" class="card-link">
+                <a href="/sell" class="card-link">
                   <span>Find A Home</span>
 
                   <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -194,7 +199,7 @@
                 </div>
 
                 <h3 class="h3 card-title">
-                  <a href="#">Sell a home</a>
+                  <a href="/sell">Sell a home</a>
                 </h3>
 
                 <p class="card-text">
@@ -202,7 +207,7 @@
                   to call home.
                 </p>
 
-                <a href="#" class="card-link">
+                <a href="/sell" class="card-link">
                   <span>Find A Home</span>
 
                   <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -233,7 +238,7 @@
       <!-- 
         - #CTA
       -->
-
+     
       <section class="cta">
         <div class="container">
 
@@ -244,11 +249,11 @@
               <p class="card-text">We can help you realize your dream of a new home</p>
             </div>
 
-            <button class="btn cta-btn">
+            <a href="/flats"><button class="btn cta-btn">
               <span>Explore Properties</span>
 
               <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
+            </button></a>
           </div>
 
         </div>

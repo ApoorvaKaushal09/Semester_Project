@@ -527,7 +527,7 @@ button, a { transition: var(--transition); }
 .service-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 30px;
 }
 
@@ -1626,4 +1626,27 @@ strong{
 .signup a{
   color: white;
   font-weight: 100;
+}
+
+.rent-card{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+#search_opt{
+  color: black;
+  border-style: 10px solid black ;
+  /* text-shadow: 1px 1px ; */
+  /* border-radius: 5%; */
+  width: 50%;
+  font-weight: 400;
+}
+
+#search_btn{
+  background-color: var(--orange-soda);
+  width: 100px;
+  height: 30px;
+
 }

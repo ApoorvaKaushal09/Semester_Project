@@ -13,19 +13,17 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(path.join(__dirname, "public")))
 
-
-// app.use('/signup',require(path.join(__dirname, 'routes/blog.js')))
 app.use('/' , require(path.join(__dirname, 'routes/blog.js')))
-
-// app.use('/flats' , require(path.join(__dirname, 'routes/blog.js')))
 
 app.get('/flats',(req,res)=>  {
   collection2.find({}).then((x) =>{
-    res.render("flats", {x,route:'/flats'})
+    res.render("flats", {x, route:'/flats'})
   }).catch((y) => {
     console.log(y)
   })
 })
+
+
 app.use('/sell' , require(path.join(__dirname, 'routes/blog.js')))
 app.post("/sell", async (req, res) => {
   const data = {
@@ -46,67 +44,34 @@ app.post("/sell", async (req, res) => {
   res.render("home");
 });
 
-
-
-
-
-// app.get('/signup', (req,res) => {
-//     res.render("signup", {route : 'signup'})
-// })
-// app.post('/signup', async(req,res) => {
-//     const data = {
-//         "name": req.body.uname, 
-//         "email":req.body.email,
-//         "password": req.body.password,
-//         "contact": req.body.contact
-//     };
-//     await collection.insertMany([data]);
-//     res.send("inserted")
-//     // res.render("home")
-// })
-
-// app.get('/login', (req,res) => {
-//     res.render("login")
-// })
-
-// app.post("/login", async (req, res) => {
-  
-//     try {
-//       let check = await collection.findOne({ email: req.body.email }).exec();
-//       if(check)
-//       res.send("User exists")
-//       else
-//       {
-//         res.send("Doesnt exist")
-//       }
-      
-//       // if (check.password === req.body.password) {
-//       //   // res.render("home");
-//       //   res.send("Succesfully login")
-//       // } else {
-//       //   res.send("wrong password");
-//       // }
-//     }
-//      catch {
-//       res.send("wrong details");
-//     }
-//   });
-
+app.get("/login", function (req, res) {
+  res.render("login", {route : '/login'});
+});
 app.get("/signup", function (req, res) {
   res.render("signup", {route : '/signup'});
 });
 
 // Handling user signup
-app.post("/signup", async (req, res) => {
-  const user = await collection.create({
-    name: req.body.uname,
+app.post('/signup', async(req, res) => {
+  const data = {
+    name: req.body.name,
     email:req.body.email,
     password: req.body.password,
-    contact:req.body.contact
-  });
-  res.send("User Sign up successfully")
-  // res.status(200).json(user);
-});
+    contact:req.body.contact,
+  }
+  await collection.insertMany([data]);
+  res.render("home")
+})
+// app.post("/signup", async (req, res) => {
+//   const user = await collection.create({
+//     name: req.body.uname,
+//     email:req.body.email,
+//     password: req.body.password,
+//     contact:req.body.contact
+//   });
+//   res.send("User Sign up successfully")
+//   // res.status(200).json(user);
+// });
 
 //Showing login form
 app.get("/login", function (req, res) {
@@ -120,7 +85,7 @@ app.post("/login", async function(req, res){
         //check if password matches
         const result = req.body.password === user.password;
         if (result) {
-          res.send("Logged in");
+          res.render("home");
         } else {
           res.status(400).json({ error: "password doesn't match" });
         }
@@ -131,7 +96,16 @@ app.post("/login", async function(req, res){
       res.status(400).json({ error });
     }
 });
+// app.get("/adminlogin", function (req, res) {
+//   res.render("adminlogin", {route : '/adminlogin'});
+// });
+app.get('/rent', function(req, res){
+  res.render("rent"), { route:'/rent' }
+})
 
+app.get("/admin", function (req, res) {
+  res.render("admin", {route : '/admin'});
+});
 app.listen(process.env.PORT || port , () => {
     console.log('Listening at port https://localhost:${port}')
 })

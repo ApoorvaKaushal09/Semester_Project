@@ -1,8 +1,7 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Login</title>
-    <link rel='stylesheet' href='../public/style.css'/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,30 +9,36 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="..//login.css">
   </head>
-  <body> -->
-    <%- include("partials/header"); -%> 
-    <section class="hero" id="home" style="background:hsl(192, 24%, 96%); padding-block:100px">
-        <div class="container1" style="margin: auto;
-        width: 34%;
-        background-color: white;
-        box-shadow: 5px black;
-        border-radius: 10px;
-  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-        " >
-          
-           <!-- <form action="/signup"> -->
-          <!--<div class="hero-content" style="margin:auto;"> -->
-            <!-- Pills navs -->
+  <body>
+   
+  <section>
+       
+
+    <div class="topnav" id="top">
+      <a class="signup" href="/login">Sign Up/Log In</a>
+      
+      <a href="#contact">Contact</a>
+      <a href="/flats">Flats</a>
+      <a href="/sell">Sell</a>
+      <a href="/#service">Services</a>
+      <a href="/#about">About</a>
+      <a href="/">Home</a>
+
+  <div id="leftii">
+    <a href="/"><img class="imgedit" src="images/logo-1.png"/></a>
+  </div>
+</div>
+</section>
+    <section class="hero" id="home">
+        <div class="container1" >
 <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-    <li class="nav-item" role="presentation" >  <h2 class="tab-login" style="margin-top: 48px;">LOGIN</h2>
+    <li class="nav-item" role="presentation" >  <h2 class="tab-login1" >ADMIN LOGIN</h2>
     </li>
   </ul>
   <!-- Pills navs -->
-  <div class="tab-content" style="margin: 35px;height: 318px;">
+  <div class="tab-content1" style="">
     <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
         <form action="/login" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
   
@@ -55,22 +60,16 @@
         </div>
         
         <!-- Submit button -->
-        <button type="submit" class="btn btn-danger" style="margin-left: 154px;margin-top: 20px; margin-bottom:20px">Log in</button>
+        <button type="button" class="btn btn-danger login_button" >Log in</button>
        
-        <!-- <button type="submit" class="btn btn-primary btn-block mb-3" style="border:none; background-color: hsl(9, 100%, 62%); color: black; width: 70%;margin: auto; margin-top: 50px;">Sign in</button> -->
-        <div class="text-center" style="height: 40px;">
-          <p>Don't have an account? <a href="/signup" style="color: hsl(9, 100%, 62%); margin-bottom: 20px;">Register</a></p>
+     <div class="text-center" >
+          <p>Don't have an account? <a href="/signup" class="sign_link">Register</a></p>
         </div>
       </form>
     </div>
     </div>
   </div>
-  <!-- Pills content -->
-                
-             <!-- </div> -->
-            
-            <!-- </form> -->
-          </div>
+  </div>
     </section>   
 
   </body>

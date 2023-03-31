@@ -1,24 +1,49 @@
 <%- include("partials/header"); -%> 
   <div class="container">
-    <% x.forEach(element => { %>
+    <form>
+      <center>
+        <input id="search_opt" type="text" placeholder="search flats according to city" name="search" />
+      <input id="search_btn"type="submit" value="search" />
+      </center>
+      
+    </form>
+    <% for( let index = 0; index < x.length; index++ ) { %>
       <div class="wrapper">
         <div class="product-img">
-          <img src="https://media.istockphoto.com/id/1384642884/photo/the-evening-sun-is-reflected-in-the-modern-glass-facade-with-balconies.jpg?b=1&s=170667a&w=0&k=20&c=9cnDfc9tNIAcgvuGHZkST7CP-dFaNXutX8OpzVO1jEA=" height="450" width="327">
+          <% if (index  == 0) { %>
+            <img src="../images/property-1.jpg" height="450" width="327">
+          <% } %>
+          <%  if (index  == 1) { %>
+            <img src="../images/about-banner-2.jpg" height="450" width="327">
+          <% } %>
+          <%  if (index  == 2) { %>
+            <img src="../images/blog-2.jpg" height="450" width="327">
+          <% } %>
+          <%  if (index  == 3) { %>
+            <img src="../images/blog-3.jpg" height="450" width="327">
+          <% } %>
+          <%  if (index  == 4) { %>
+            <img src="../images/about-banner-2.jpg" height="450" width="327">
+          <% } %>
+          <%  if (index  == 5) { %>
+            <img src="../images/property-1.jpg" height="450" width="327">
+          <% } %>
+          
         </div>
         <div class="product-info">
           <div class="product-text">
-            <h1><%= element.fcity %></h1>
-            <h2><%= element.fname %></h2>
-            <p>  <%= element.description %><br><strong>Address:</strong> <%= element.floc %> <br> <strong>Contact: </strong><%= element.fcontact %> <br><strong>Availibility: </strong> <%= element.ftype %> <br> <strong>City: </strong><%= element.fcity %> <strong> , State:</strong><%= element.fstate %> <br> <strong>Furnished: </strong> <%= element.furnish %> <br><strong>Size</strong> <%= element.size %></p>
+            <h1><%= x[index].fcity %></h1>
+            <h2><%= x[index].fname %></h2>
+            <p>  <%= x[index].description %><br><strong>Address:</strong> <%= x[index].floc %> <br> <strong>Contact: </strong><%= x[index].fcontact %> <br><strong>Availibility: </strong> <%= x[index].ftype %> <br> <strong>City: </strong><%= x[index].fcity %> <strong> , State:</strong><%= x[index].fstate %> <br> <strong>Furnished: </strong> <%= x[index].furnish %> <br><strong>Size</strong> <%= x[index].size %></p>
             <p></p>
           </div>
           <div class="product-price-btn">
-            <p><span><%= element.fprice %></span>$</p>
+            <p><span><%= x[index].fprice %></span>Rs.</p>
             <button type="button">View Flat</button>
           </div>
         </div>
       </div>
-    <% }) %>
+    <% } %>
   </div>
   
 

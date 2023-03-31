@@ -11,12 +11,8 @@ router.get('/', (req,res) => {
     
 // })
 router.get('/sell', (req,res) => {
-    res.render("sell", {route : 'sell'})
+    res.render("sell", {route : '/sell'})
    
 })
-
-// router
-
-// router.po st
 
 module.exports = router;

@@ -106,6 +106,9 @@ app.get('/rent', function(req, res){
 app.get("/admin", function (req, res) {
   res.render("admin", {route : '/admin'});
 });
+
+
+
 app.listen(process.env.PORT || port , () => {
     console.log('Listening at port https://localhost:${port}')
 })

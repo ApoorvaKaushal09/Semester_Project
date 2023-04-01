@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const ejs = require("ejs");
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 const {collection, collection2} = require("./mongodb")

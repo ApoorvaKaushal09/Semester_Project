@@ -174,6 +174,32 @@ app.get('/rent', function(req, res){
 app.get("/admin", function (req, res) {
   res.render("admin", {route : '/admin'});
 });
+
+
+
+
+
+
+
+
+
+// app.get('/flat/:id', (req, res) => {
+//   const flatId = req.params.id; // get the flat id parameter from the request
+//   // find the flat details using the flatId and pass them to the view
+//   const flat = findFlatDetails(flatId); // replace with your function to fetch the flat details
+//   res.render('flatDetails', { flat });
+// });
+
+app.get('/flat/:id',(req,res)=>  {
+  collection2.findById(req.params.id).then((x) =>{
+    res.render("flatDetails", {x})
+  }).catch((y) => {
+    console.log(y)
+  })
+})
+
+
+
 app.listen(process.env.PORT || port , () => {
     console.log('Listening at port https://localhost:${port}')
 })

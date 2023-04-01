@@ -1439,7 +1439,7 @@ button, a { transition: var(--transition); }
 
 
 .wrapper {
-  height: 450px;
+  height: 300px;
   width: 100%;
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
@@ -1451,7 +1451,7 @@ button, a { transition: var(--transition); }
 
 .product-img {
   float: left;
-  height: 450px;
+  height: 300px;
   width: 327px;
 }
 
@@ -1461,15 +1461,15 @@ button, a { transition: var(--transition); }
 
 .product-info {
   float: left;
-  height: 450px;
+  height: 300px;
   width: 400px;
   border-radius: 0 7px 10px 7px;
   background-color: #ffffff;
 }
 
 .product-text {
-  height: 100px;
-  width: 700px;
+  height: 220px;
+  width: 800px;
 }
 
 .product-text h1 {
@@ -1506,9 +1506,10 @@ button, a { transition: var(--transition); }
 }
 
 .product-price-btn {
-  height: 103px;
-  width: 800px;
-  margin-top: 258px;
+  /* height: 103px; */
+  width: 930px;
+  /* margin-top: 130px; */
+  /* margin-left: 36px; */
   position: relative;
 }
 
@@ -1649,4 +1650,16 @@ strong{
   width: 100px;
   height: 30px;
 
+}
+
+.wrapper:hover{
+  /* transition: transform .5s; */
+
+    transform: scale3d(1.02, 1.02, 1);
+
+   
+}
+
+.radio_btn{
+  margin: 10px;
 }

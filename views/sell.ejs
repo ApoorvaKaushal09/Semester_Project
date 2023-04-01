@@ -7,7 +7,7 @@
             <!-- form -->
 
             <h1><center>Upload Flat Details</center></h1>
-              <form action = "/sell" method="post">
+              <form action = "/sell" method="post" enctype="multipart/form-data">
                   <div class="input-group mb-3">
                     <span class="input-group-text">Flat Description</span>
                     <textarea  placeholder="Enter Flat Description" name="description" class="form-control" aria-label="With textarea" required></textarea>
@@ -41,20 +41,51 @@
                       
                     </div>
                     <div class="input-group mb-3">
-                      <span class="input-group-text">Sell/Rent</span>
-                      <input placeholder="Enter Sell/Rent" name="ftype" type="text" aria-label="First name" class="form-control" required>
+                      <label class="input-group-text" style="margin-right: 10px;">Availability</label>
+                      <!-- <span class="input-group-text">Sell/Rent</span> -->
+                      
+                      <input class = "radio_btn" type="radio" id="sell" name="ftype" value="sell">
+                      <label class = "radio_btn" for="sell">Sell</label>
+                      <input class = "radio_btn" type="radio" id="rent" name="ftype" value="rent">
+                      <label class = "radio_btn" for="rent">Rent</label>
+                      
+                      
+                      <!-- <input placeholder="Enter Sell/Rent" name="ftype" type="text" aria-label="First name" class="form-control" required> -->
                       
                     </div>
                     <div class="input-group mb-3">
+                      <label class="input-group-text" style="margin-right: 10px;">Furnished</label>
+                      <!-- <span class="input-group-text">Sell/Rent</span> -->
+                      
+                      <input class = "radio_btn" type="radio" id="yes" name="furnish" value="Furnished">
+                      <label class = "radio_btn" for="Furnished">Yes</label>
+                      <input class = "radio_btn" type="radio" id="no" name="furnish" value="Not Furnished">
+                      <label class = "radio_btn" for="Not Furnished">No</label>
+                      
+                      
+                      <!-- <input placeholder="Enter Sell/Rent" name="ftype" type="text" aria-label="First name" class="form-control" required> -->
+                      
+                    </div>
+                    <!-- <div class="input-group mb-3">
                       <span class="input-group-text">Furnished</span>
                       <input name="furnish" placeholder="Yes/No" type="text" aria-label="First name" class="form-control" required>
                       
-                    </div>
+                    </div> -->
                     <div class="input-group mb-3">
                       <span class="input-group-text">Size</span>
                       <input placeholder="Enter Size in BHK or sq.ft." name="size" type="text" aria-label="First name" class="form-control" required>
                       
                     </div>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Upload Property images</label>
+                      <input class="form-control" type="file" name="imageFile" multiple>
+                    </div>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Upload Property document</label>
+                      <input class="form-control" type="file" name="pdfFile" >
+                    </div>
+                    <!-- <button type="submit" id="button-send" style="background-color: hsl(9, 100%, 62%); " class="btn">Upload Flat Details</button> -->
+                
                            <button type="submit" id="button-send" style="background-color: hsl(9, 100%, 62%); " class="btn">Upload Flat Details</button>
                 </form>
                 <!-- <script type="text/javascript">

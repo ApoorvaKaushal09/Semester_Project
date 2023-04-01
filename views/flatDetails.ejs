@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images2/favicon-32x32.png">
+  <title>Flat-Details Page</title>
+  <link rel="stylesheet" href="..//product.css">
+  <!-- <link rel="stylesheet" href="..//style.css"> -->
+  <link rel="stylesheet" href="..//media-queries.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.google.com/specimen/Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- <script defer src="./js/script.js"></script> -->
+</head>
+<body>
+
+  <!-- <header role="header" id="header">
+    <div class="container">
+      <div id="header-menu">
+        <a href="javascript:void(0);">
+          <img src="../images2/icon-menu.svg" alt="Menu">
+        </a>
+      </div>
+      <div id="header-logo">
+        <img src="../images2/logo.svg" alt="Sneakers" />
+      </div>
+      <nav id="header-menu-middle">
+        <div id="header-menu-middle-container">
+          <div id="header-menu-middle-close">
+            <a href="javascript:void(0);">
+              <img src="../images2/icon-close.svg" alt="Close" />
+            </a>
+          </div>
+          <ul class="clearfix">
+            <li><a href="javascript:void(0);">Collections</a></li>
+            <li><a href="javascript:void(0);">Men</a></li>
+            <li><a href="javascript:void(0);">Women</a></li>
+            <li><a href="javascript:void(0);">About</a></li>
+            <li><a href="javascript:void(0);">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="header-menu-right">
+        <ul>
+          <li id="header-menu-right-cart-button">
+            <a href="javascript:void(0);">
+              <span id="header-menu-right-cart-badge">0</span>
+              <img src="../images2/icon-cart.svg" alt="Cart">
+            </a>
+          </li>
+          <li id="header-menu-right-profile-image">
+            <a href="javascript:void(0);">
+              <img src="../images2/image-avatar.png" alt="Profile">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section id="cart">
+    <div id="cart-header">
+      <h3 id="cart-title">Cart</h3>
+    </div>
+    <div id="cart-body">
+      <div id="cart-empty">
+        <h4 id="cart-empty-message">Your cart is empty</h4>
+      </div>
+      <div id="cart-items">
+        <div id="cart-items-container">
+          <section class="cart-item clearfix">
+            <img src="../images2/image-product-1-thumbnail.jpg" class="cart-item-image" alt="Autum Limited Edition">
+            <div class="cart-item-middle">
+              <h5>Autum Limited Edition</h5>
+              <p>
+                $<span class="cart-item-middle-price">0.00</span> 
+                x 
+                <span class="cart-item-middle-quantity">1</span> 
+                <strong>$<span class="cart-item-middle-amount"></span></strong>
+              </p>
+            </div>
+            <div class="cart-item-delete">
+              <a href="javascript:void(0);">
+                <img src="../images2/icon-delete.svg" alt="Delete">
+              </a>
+            </div>
+          </section>
+        </div>
+        <div id="cart-items-checkout">
+          <button class="btn">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <section>
+       
+
+    <div class="topnav" id="top">
+      <!-- <a type="button" class="btn">Success</a> -->
+      <a class="signup" href="/login">Sign Up/Log In</a>
+      <a href="/#contact">Contact</a>
+      <a href="/flats">Flats</a>
+      <a href="/sell">Sell</a>
+      <a href="/#service">Services</a>
+      <a href="/#about">About</a>
+      <a href="/">Home</a>
+
+  <div id="leftii">
+    <a href="/"><img class="imgedit" src="images/logo-1.png"/></a>
+  </div>
+</div>
+</section>
+  <main class="main" role="main">
+    <div class="container clearfix">
+      <div id="product-gallery">
+        <div id="product-images">
+          <div id="product-arrows">
+            <div class="product-arrow">
+              <button data-type="previous">
+                <img src="../images/icon-previous.svg" alt="Previous">
+              </button>
+            </div>
+            <div class="product-arrow">
+              <button data-type="next">
+                <img src="../images2/icon-next.svg" alt="Next">
+              </button>
+            </div>
+          </div>
+          <div id="product-images-center">
+            <div class="product-image active">
+              <img src="../images/property-1.jpg" alt="Product 1">
+            </div>
+            <div class="product-image">
+              <img src="../images/property-2.jpg" alt="Product 2">
+            </div>
+            <div class="product-image">
+              <img src="../images/property-3.jpg" alt="Product 3">
+            </div>
+            <div class="product-image">
+              <img src="../images/blog-1.png" alt="Product 4">
+            </div>
+          </div>
+          <div id="product-images-thumbs">
+            <div class="product-image-thumb active">
+              <img src="../images/property-1.jpg" alt="Product 1">
+            </div>
+            <div class="product-image-thumb">
+              <img src="../images/property-2.jpg" alt="Product 2">
+            </div>
+            <div class="product-image-thumb">
+              <img src="../images/property-3.jpg" alt="Product 3">
+            </div>
+            <div class="product-image-thumb">
+              <img src="../images/blog-1.png" alt="Product 4">
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="product-description">
+        <h5 id="product-owner">
+          By <%= x.fname %>
+        </h5>
+        <h1 id="product-title">
+          <%= x.fcity %>,  <%= x.fstate %>
+        </h1>
+        <p id="product-content">
+            <%= x.description %>
+        </p>
+        <p >
+            <strong>Address: </strong>  <%= x.floc %> 
+        </p>
+        <p>
+            <strong>Contact: </strong>  <%= x.fcontact %> 
+        </p>
+        <p>
+            <strong>City: </strong>  <%= x.fcity %> 
+        </p>
+        <p>
+            <strong>State: </strong>  <%= x.state %> 
+        </p>
+        <div id="product-price">
+          <span id="product-actual-price">
+            <span id="product-actual-price-content">
+              $ <%= x.fprice %>.00
+            </span>
+            <span id="product-descount-percentage">
+                <%= x.ftype %>
+            </span>
+            <span id="product-descount-percentage">
+                <%= x.furnish %>
+            </span>
+            <span id="product-descount-percentage">
+                <%= x.size %>
+            </span>
+          </span>
+         
+          <!-- <span id="product-descount-price">$250.00</span> -->
+        </div>
+
+        <div id="product-footer">
+          <!-- <div id="product-amount">
+            <button class="product-amount-button" id="product-amount-minus" data-type="minus">
+              <img src="../images2/icon-minus.svg" alt="Minus">
+            </button>
+            <input type="number" id="product-amount-value" value="0" min="0" max="999" />
+            <button class="product-amount-button" id="product-amount-plus" data-type="plus">
+              <img src="../images2/icon-plus.svg" alt="Plus">
+            </button>
+          </div> -->
+          <div id="product-btn">
+            <button class="btn btn-shadown" id="btn-add-to-cart">
+              <!-- <img src="../images2/icon-cart.svg" alt="Cart"> -->
+              <span> Book an Appointment</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <div id="product-lightbox">
+        <div id="product-lightbox-center">
+          <div id="product-lightbox-close">
+            <button>
+              <img src="../images2/icon-close.svg" alt="Close">
+            </button>
+          </div>
+          <div id="product-lightbox-content">
+            <div class="product-lightbox-arrows" id="product-lightbox-arrow-previous" data-type="previous">
+              <button>
+                <img src="../images2/icon-previous.svg" alt="Previous">
+              </button>
+            </div>
+            <div id="product-lightbox-content-image">
+              <div class="product-lightbox-content-image active">
+                <img src="../images/property-1.jpg" alt="Product 1">
+              </div>
+              <div class="product-lightbox-content-image">
+                <img src="../images/property-2.jpg" alt="Product 2">
+              </div>
+              <div class="product-lightbox-content-image">
+                <img src="../images/property-3.jpg" alt="Product 3">
+              </div>
+              <div class="product-lightbox-content-image">
+                <img src="../images/blog-1.png" alt="Product 4">
+              </div>
+            </div>
+            <div class="product-lightbox-arrows" id="product-lightbox-arrow-next" data-type="next">
+              <button>
+                <img src="../images2/icon-next.svg" alt="Next">
+              </button>
+            </div>
+          </div>
+          <div id="product-lightbox-thumbs">
+            <div class="product-lightbox-content-thumb active">
+              <img src="../images/property-1.jpg" alt="Product 1">
+            </div>
+            <div class="product-lightbox-content-thumb">
+              <img src="../images/property-2.jpg" alt="Product 2">
+            </div>
+            <div class="product-lightbox-content-thumb">
+              <img src="../images/property-3.jpg" alt="Product 3">
+            </div>
+            <div class="product-lightbox-content-thumb">
+              <img src="../images/blog-1.png" alt="Product 4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/tadeubdev">Tadeu Barbosa</a>.
+    </div>
+  </footer> -->
+  <script>
+
+window.addEventListener('load', () => {
+    // document.querySelector('#header-menu').addEventListener('click', () => {
+    //     document.querySelector('#header-menu-middle').classList.add('active');
+    // });
+    // document.querySelector('#header-menu-middle-close').addEventListener('click', () => {
+    //     document.querySelector('#header-menu-middle').classList.remove('active');
+    // });
+    // document.querySelector('.cart-item-delete a').addEventListener('click', () => {
+    //     document.querySelector('body').classList.remove('has-items');
+    //     cartBadge.innerText = 0;
+    // });
+    // document.querySelector('#header-menu-right-cart-button a').addEventListener('click', () => {
+    //     document.querySelector('#cart').classList.toggle('active');
+    // });
+
+    // document.addEventListener('click', event => {
+    //     const elmCart = document.querySelector('#cart');
+    //     const btnOpenCart = document.querySelector('#header-menu-right-cart-button a');
+    //     let elmTarget = event.target;
+    //     do {
+    //     if (elmTarget === elmCart || elmTarget === btnOpenCart) {
+    //         return;
+    //     }
+    //     elmTarget = elmTarget.parentNode;
+    //     } while(elmTarget);
+    //     // clicked outside of the cart
+    //     document.querySelector('#cart').classList.remove('active');
+    // });
+
+    function handleMoveProducstsImagesCarroussel(actionType) {
+        const actualImage = document.querySelector('#product-images-center .product-image.active');
+        const actualImageIndex = prodsImages.indexOf(actualImage);
+
+        let nextImageIndex = null;
+        if (actionType === 'next') {
+        nextImageIndex = actualImageIndex === prodsImagesTotal - 1 ? 0 : actualImageIndex + 1;
+        } else {
+        nextImageIndex = actualImageIndex === 0 ? prodsImagesTotal - 1 : actualImageIndex - 1;
+        }
+        document.querySelector('#product-images-center .product-image.active').classList.remove('active');
+        document.querySelectorAll('#product-images-center .product-image')[nextImageIndex].classList.add('active');
+        
+        document.querySelector('#product-images-thumbs .product-image-thumb.active').classList.remove('active');
+        document.querySelectorAll('#product-images-thumbs .product-image-thumb')[nextImageIndex].classList.add('active');
+    }
+
+    const prodsImages = [...document.querySelectorAll('#product-images-center .product-image')];
+    const prodsImagesTotal = prodsImages.length;
+    document.querySelectorAll('.product-arrow button').forEach(bntArrow => {
+        const btnType = bntArrow.dataset.type;
+        bntArrow.addEventListener('click', () => handleMoveProducstsImagesCarroussel(btnType));
+    });
+
+    const thumbproductImages = [...document.querySelectorAll('#product-images-thumbs .product-image-thumb')];
+    document.querySelectorAll('.product-image-thumb').forEach(imgProduct => {
+        imgProduct.addEventListener('click', () => {
+        if (imgProduct.classList.contains('active')) {
+            return;
+        }
+        const btnImageIndex = thumbproductImages.indexOf(imgProduct);
+        document.querySelector('#product-images-thumbs .product-image-thumb.active').classList.remove('active');
+        document.querySelectorAll('#product-images-thumbs .product-image-thumb')[btnImageIndex].classList.add('active');
+
+        document.querySelector('#product-images-center .product-image.active').classList.remove('active');
+        document.querySelectorAll('#product-images-center .product-image')[btnImageIndex].classList.add('active');
+        });
+    });
+
+    document.querySelectorAll('.product-amount-button').forEach(btnAmount => {
+        btnAmount.addEventListener('click', () => {
+        const btnType = btnAmount.dataset.type;
+        const inputAmount = document.querySelector('#product-amount-value');
+        const inputValue = parseInt(inputAmount.value);
+        if (btnType === 'minus') {
+            inputAmount.value = inputValue > 0 ? inputValue - 1 : 0;
+        } else {
+            inputAmount.value = inputValue < 999 ? inputValue + 1 : 999;
+        }
+        });
+    });
+
+    const inpAmountValue = document.querySelector('#product-amount-value');
+    const cartBadge = document.querySelector('#header-menu-right-cart-badge');
+    const itemPrice = document.querySelector('#product-actual-price-content');
+    const itemCartPrice = document.querySelector('.cart-item-middle-price');
+    const itemCartQuantity = document.querySelector('.cart-item-middle-quantity');
+    const itemCartAmount = document.querySelector('.cart-item-middle-amount');
+    document.querySelector('#btn-add-to-cart').addEventListener('click', () => {
+        const amount = parseInt(inpAmountValue.value);
+        if (amount === 0) {
+        return;
+        }
+        const totalAmount = parseInt(cartBadge.innerText) + amount;
+        cartBadge.innerText = totalAmount;
+        if (document.querySelector('body').classList.contains('has-items') === false) {
+        document.querySelector('body').classList.add('has-items');
+        }
+        let itemPriceValue = parseFloat(itemPrice.innerText.replace('$', ''));
+        itemCartQuantity.innerText = totalAmount;
+        itemCartPrice.innerText = itemPriceValue;
+        itemCartAmount.innerText = totalAmount * itemPriceValue;
+        inpAmountValue.value = 0;
+    });
+
+    document.querySelector('#product-lightbox-close button').addEventListener('click', () => {
+        document.querySelector('#product-lightbox').classList.remove('active');
+    });
+
+    const prodsLightboxImages = [...document.querySelectorAll('.product-lightbox-content-image')];
+    const prodsLightboxImagesTotal = prodsLightboxImages.length;
+
+    function handleMoveProducstsLightboxImagesCarroussel(actionType, nextImageIndex = null) {
+        const actualImage = document.querySelector('.product-lightbox-content-image.active');
+        const actualImageIndex = prodsLightboxImages.indexOf(actualImage);
+
+        if (nextImageIndex === null && actionType === 'next') {
+        nextImageIndex = actualImageIndex === prodsLightboxImagesTotal - 1 ? 0 : actualImageIndex + 1;
+        } else if (nextImageIndex === null) {
+        nextImageIndex = actualImageIndex === 0 ? prodsLightboxImagesTotal - 1 : actualImageIndex - 1;
+        }
+        document.querySelector('.product-lightbox-content-image.active').classList.remove('active');
+        document.querySelectorAll('.product-lightbox-content-image')[nextImageIndex].classList.add('active');
+        
+        document.querySelector('.product-lightbox-content-thumb.active').classList.remove('active');
+        document.querySelectorAll('.product-lightbox-content-thumb')[nextImageIndex].classList.add('active');
+    }
+
+    document.querySelectorAll('.product-lightbox-arrows').forEach(arrowLightbox => {
+        const btnType = arrowLightbox.dataset.type;
+        arrowLightbox.addEventListener('click', () => handleMoveProducstsLightboxImagesCarroussel(btnType));
+    });
+
+    const thumbProductLightboxImages = [...document.querySelectorAll('.product-lightbox-content-thumb')];
+    document.querySelectorAll('.product-lightbox-content-thumb').forEach(imgProduct => {
+        imgProduct.addEventListener('click', () => {
+        if (imgProduct.classList.contains('active')) {
+            return;
+        }
+        const btnImageIndex = thumbProductLightboxImages.indexOf(imgProduct);
+        handleMoveProducstsLightboxImagesCarroussel(null, btnImageIndex);
+        });
+    });
+
+    document.querySelectorAll('.product-image').forEach(productImage => {
+        productImage.addEventListener('click', () => {
+        document.querySelector('#product-lightbox').classList.add('active');
+        });
+    });
+
+    document.addEventListener('click', event => {
+        const elmLightboxContent = document.querySelector('#product-lightbox-center');
+        const elmThumbs = document.querySelector('#product-images-center');
+        let elmTarget = event.target;
+        do {
+        if (elmTarget === elmLightboxContent || elmTarget === elmThumbs) {
+            return;
+        }
+        elmTarget = elmTarget.parentNode;
+        } while(elmTarget);
+        // clicked outside of the cart
+        document.querySelector('#product-lightbox').classList.remove('active');
+    });
+});
+
+  </script>
+</body>
+</html>

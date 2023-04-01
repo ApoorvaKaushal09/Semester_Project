@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/Abode", {
+mongoose.connect("mongodb://127.0.0.1:27017/Abode", {
 }).then(() => {
     console.log(`connection successful`);
 }).catch((e) =>{
@@ -32,7 +32,7 @@ const flatSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-  
+    
     fname: {
       type: String,
       required: true,
@@ -77,11 +77,30 @@ const flatSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    image:[String],
+    propDocument:
+  {
+    name: String,
+    data:Buffer,
+    
+  }
   });
 
+const uplaodschema=new mongoose.Schema({
+  imagename:
+  {
+    type: String,
+  },
+  // img:
+  // {
+  //   data:Buffer,
+  //   contentType: String
+  // }
 
+});
 
 
 const collection = new mongoose.model("userSignup", SignupSchema)
 const collection2 = new mongoose.model("flatDetails", flatSchema)
-module.exports = {collection, collection2};
+const collection3= new mongoose.model("uploadfiles",uplaodschema)
+module.exports = {collection, collection2,collection3};

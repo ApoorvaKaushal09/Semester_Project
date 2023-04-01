@@ -1,10 +1,16 @@
 const express = require('express')
 const path = require('path')
 const ejs = require("ejs");
+<<<<<<< HEAD
 // const bodyParser = require('body-parser')
+=======
+const multer  = require('multer')
+// const upload = multer({ dest: 'uploads/' })
+const bodyParser = require('body-parser')
+>>>>>>> dc65d4c7a3947a45f6da12dedbff5172a34745cd
 const app = express()
 const port = 3000
-const {collection, collection2} = require("./mongodb")
+const {collection, collection2,collection3} = require("./mongodb")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -15,6 +21,33 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.use('/' , require(path.join(__dirname, 'routes/blog.js')))
 
+app.use(express.static(__dirname+"./public/"));
+
+var Storage = multer.diskStorage({
+  destination: "./public/uploads/",
+  filename:  (req, file, cb) =>{
+    cb(null, file.fieldname + "_" + Date.now()+path.extname(file.originalname));
+  }
+});
+var upload=multer({
+  storage:Storage
+});
+// .array('file',12)
+// var Storage1 = multer.diskStorage({
+//   destination: "./public/propDoc/",
+//   filename:  (req, file, cb) =>{
+//     cb(null, file.fieldname + "_" + Date.now()+path.extname(file.originalname));
+//   }
+// });
+// var upload=multer({
+//   storage:Storage
+// }).single("pdfFile");
+
+// var upload=multer({
+//   storage:Storage
+// }).single('file');
+
+
 app.get('/flats',(req,res)=>  {
   collection2.find({}).then((x) =>{
     res.render("flats", {x, route:'/flats'})
@@ -24,8 +57,42 @@ app.get('/flats',(req,res)=>  {
 })
 
 
+//for uplaoding images
+
+// app.get('/upload',(req,res)=>  {
+//   // var success=req.file.filename+" uplaod successfully";
+  
+//   collection3.find({}).then((x) =>{
+//     res.render("upload", {x, route:'/upload'})
+//   }).catch((y) => {
+//     console.log(y)
+//   })
+// })
+// app.post('/upload',upload,async (req,res)=>  {
+//   console.log(image)
+//   const imagedetails={
+//     imagename:req.file.filename
+//   };
+//   await collection3.insertMany([imagedetails]);
+//   collection3.find({}).then((x) =>{
+//     res.render("upload", {x, route:'/upload'})
+//   }).catch((y) => {
+//     console.log(y)
+//   })
+  
+//   res.render("upload")
+// })
+
+
+
+
+
 app.use('/sell' , require(path.join(__dirname, 'routes/blog.js')))
-app.post("/sell", async (req, res) => {
+app.get('/sell',(req,res)=>  {
+    res.render("sell", { route:'/sell'})
+  
+})
+app.post("/sell",upload .fields([{name:"pdfFile",maxCount:1},{name:"imageFile",maxCount:10}]),async (req, res) => {
   const data = {
     description: req.body.description,
     fname: req.body.fname,
@@ -37,8 +104,13 @@ app.post("/sell", async (req, res) => {
     ftype: req.body.ftype,
     furnish: req.body.furnish,
     size: req.body.size,
-  };
+    image:req.files.imageFile.map(imageFile=>imageFile.filename),
+    propDocument:{
+      name:req.files.pdfFile[0].filename,
+      data:req.files.pdfFile[0].buffer,
+    }
 
+  }
   await collection2.insertMany([data]);
 
   res.render("home");
@@ -109,6 +181,32 @@ app.get("/admin", function (req, res) {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+// app.get('/flat/:id', (req, res) => {
+//   const flatId = req.params.id; // get the flat id parameter from the request
+//   // find the flat details using the flatId and pass them to the view
+//   const flat = findFlatDetails(flatId); // replace with your function to fetch the flat details
+//   res.render('flatDetails', { flat });
+// });
+
+app.get('/flat/:id',(req,res)=>  {
+  collection2.findById(req.params.id).then((x) =>{
+    res.render("flatDetails", {x})
+  }).catch((y) => {
+    console.log(y)
+  })
+})
+
+
+
+>>>>>>> dc65d4c7a3947a45f6da12dedbff5172a34745cd
 app.listen(process.env.PORT || port , () => {
     console.log('Listening at port https://localhost:${port}')
 })

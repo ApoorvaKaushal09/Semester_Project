@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%> 
+    <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <!-- form -->
+
+            <h1><center>Upload Flat Details</center></h1>
+            
+              <form action = "/upload" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" type="file" name="file" multiple>
+                  </div>
+                  <button type="submit" id="button-send" style="background-color: hsl(9, 100%, 62%); " class="btn">Upload Flat Details</button>
+              
+            </form>
+        </div>
+            
+        
+      </div>
+      <div class="container">
+        <div class="row">
+            <%if (x.length>0) {%>
+                <% for( let index = 0; index < x.length; index++ ) { %>
+                    <div class="col-md-4">
+                        <img src="./uploads/<%=x[index].imagename%>" alt="flat-image" style="margin: 60px auto;width: 500px;">
+                    </div>
+                    <%}}%>
+        </div>
+    </div>
+</section>  
+
+            <%- include("partials/footer"); -%> 

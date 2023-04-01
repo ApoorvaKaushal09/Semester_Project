@@ -7,26 +7,32 @@
       </center>
       
     </form>
+
+    <script>
+      function redirectToFlatDetails(flatId) {
+    window.location.href = "/flat/" + flatId; // replace with the URL of your flat details page
+  }
+    </script>
     <% for( let index = 0; index < x.length; index++ ) { %>
       <div class="wrapper">
         <div class="product-img">
           <% if (index  == 0) { %>
-            <img src="../images/property-1.jpg" height="450" width="327">
+            <img src="../images/property-1.jpg" height="300" width="327">
           <% } %>
           <%  if (index  == 1) { %>
-            <img src="../images/about-banner-2.jpg" height="450" width="327">
+            <img src="../images/about-banner-2.jpg" height="300" width="327">
           <% } %>
           <%  if (index  == 2) { %>
-            <img src="../images/blog-2.jpg" height="450" width="327">
+            <img src="../images/blog-2.jpg" height="300" width="327">
           <% } %>
           <%  if (index  == 3) { %>
-            <img src="../images/blog-3.jpg" height="450" width="327">
+            <img src="../images/blog-3.jpg" height="300" width="327">
           <% } %>
           <%  if (index  == 4) { %>
-            <img src="../images/about-banner-2.jpg" height="450" width="327">
+            <img src="../images/about-banner-2.jpg" height="300" width="327">
           <% } %>
           <%  if (index  == 5) { %>
-            <img src="../images/property-1.jpg" height="450" width="327">
+            <img src="../images/property-1.jpg" height="300" width="327">
           <% } %>
           
         </div>
@@ -34,12 +40,20 @@
           <div class="product-text">
             <h1><%= x[index].fcity %></h1>
             <h2><%= x[index].fname %></h2>
-            <p>  <%= x[index].description %><br><strong>Address:</strong> <%= x[index].floc %> <br> <strong>Contact: </strong><%= x[index].fcontact %> <br><strong>Availibility: </strong> <%= x[index].ftype %> <br> <strong>City: </strong><%= x[index].fcity %> <strong> , State:</strong><%= x[index].fstate %> <br> <strong>Furnished: </strong> <%= x[index].furnish %> <br><strong>Size</strong> <%= x[index].size %></p>
+            <p>  <%= x[index].description %><br>
+            <strong>Address:</strong> <%= x[index].floc %> 
+            <!-- <br> <strong>Contact: </strong><%= x[index].fcontact %> <br> -->
+            <!-- <strong>Availibility: </strong> <%= x[index].ftype %> <br> -->
+             <!-- <strong>City: </strong><%= x[index].fcity %> <strong>  -->
+              <!-- , State:</strong><%= x[index].fstate %> -->
+               <!-- <br> <strong>Furnished: </strong> <%= x[index].furnish %>  -->
+               <br><strong>Size</strong> <%= x[index].size %></p>
             <p></p>
           </div>
           <div class="product-price-btn">
             <p><span><%= x[index].fprice %></span>Rs.</p>
-            <button type="button">View Flat</button>
+            <button type="button" onclick="redirectToFlatDetails('<%= x[index].id %>')">View Flat</button>
+            <!-- <button type="button" >View Flat</button> -->
           </div>
         </div>
       </div>

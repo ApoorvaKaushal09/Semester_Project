@@ -41,15 +41,36 @@
                       
                     </div>
                     <div class="input-group mb-3">
-                      <span class="input-group-text">Sell/Rent</span>
-                      <input placeholder="Enter Sell/Rent" name="ftype" type="text" aria-label="First name" class="form-control" required>
+                      <label class="input-group-text" style="margin-right: 10px;">Availability</label>
+                      <!-- <span class="input-group-text">Sell/Rent</span> -->
+                      
+                      <input class = "radio_btn" type="radio" id="sell" name="ftype" value="sell">
+                      <label class = "radio_btn" for="sell">Sell</label>
+                      <input class = "radio_btn" type="radio" id="rent" name="ftype" value="rent">
+                      <label class = "radio_btn" for="rent">Rent</label>
+                      
+                      
+                      <!-- <input placeholder="Enter Sell/Rent" name="ftype" type="text" aria-label="First name" class="form-control" required> -->
                       
                     </div>
                     <div class="input-group mb-3">
+                      <label class="input-group-text" style="margin-right: 10px;">Furnished</label>
+                      <!-- <span class="input-group-text">Sell/Rent</span> -->
+                      
+                      <input class = "radio_btn" type="radio" id="yes" name="furnish" value="Furnished">
+                      <label class = "radio_btn" for="Furnished">Yes</label>
+                      <input class = "radio_btn" type="radio" id="no" name="furnish" value="Not Furnished">
+                      <label class = "radio_btn" for="Not Furnished">No</label>
+                      
+                      
+                      <!-- <input placeholder="Enter Sell/Rent" name="ftype" type="text" aria-label="First name" class="form-control" required> -->
+                      
+                    </div>
+                    <!-- <div class="input-group mb-3">
                       <span class="input-group-text">Furnished</span>
                       <input name="furnish" placeholder="Yes/No" type="text" aria-label="First name" class="form-control" required>
                       
-                    </div>
+                    </div> -->
                     <div class="input-group mb-3">
                       <span class="input-group-text">Size</span>
                       <input placeholder="Enter Size in BHK or sq.ft." name="size" type="text" aria-label="First name" class="form-control" required>

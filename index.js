@@ -55,29 +55,29 @@ app.get('/flats',(req,res)=>  {
 
 //for uplaoding images
 
-// app.get('/upload',(req,res)=>  {
-//   // var success=req.file.filename+" uplaod successfully";
+app.get('/upload',(req,res)=>  {
+  // var success=req.file.filename+" uplaod successfully";
   
-//   collection3.find({}).then((x) =>{
-//     res.render("upload", {x, route:'/upload'})
-//   }).catch((y) => {
-//     console.log(y)
-//   })
-// })
-// app.post('/upload',upload,async (req,res)=>  {
-//   console.log(image)
-//   const imagedetails={
-//     imagename:req.file.filename
-//   };
-//   await collection3.insertMany([imagedetails]);
-//   collection3.find({}).then((x) =>{
-//     res.render("upload", {x, route:'/upload'})
-//   }).catch((y) => {
-//     console.log(y)
-//   })
+  collection3.find({}).then((x) =>{
+    res.render("upload", {x, route:'/upload'})
+  }).catch((y) => {
+    console.log(y)
+  })
+})
+app.post('/upload',upload.single("file"),async (req,res)=>  {
+  // console.log(image)
+  const imagedetails={
+    imagename:req.file.filename
+  };
+  await collection3.insertMany([imagedetails]);
+  collection3.find({}).then((x) =>{
+    res.render("upload", {x, route:'/upload'})
+  }).catch((y) => {
+    console.log(y)
+  })
   
-//   res.render("upload")
-// })
+  res.render("upload")
+})
 
 
 
@@ -190,7 +190,7 @@ app.get("/admin", function (req, res) {
 //   res.render('flatDetails', { flat });
 // });
 
-app.get('/flat/:id',(req,res)=>  {
+app.get('/flats/:id',(req,res)=>  {
   collection2.findById(req.params.id).then((x) =>{
     res.render("flatDetails", {x})
   }).catch((y) => {

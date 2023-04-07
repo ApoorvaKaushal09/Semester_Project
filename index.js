@@ -1,16 +1,17 @@
 const express = require('express')
 const path = require('path')
 const ejs = require("ejs");
-<<<<<<< HEAD
+
 // const bodyParser = require('body-parser')
-=======
+
 const multer  = require('multer')
 // const upload = multer({ dest: 'uploads/' })
 const bodyParser = require('body-parser')
->>>>>>> dc65d4c7a3947a45f6da12dedbff5172a34745cd
+
 const app = express()
 const port = 3000
-const {collection, collection2,collection3} = require("./mongodb")
+const {collection, collection2,collection3} = require("./mongodb");
+const { param } = require('express-validator');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -181,8 +182,7 @@ app.get("/admin", function (req, res) {
 
 
 
-<<<<<<< HEAD
-=======
+
 
 
 
@@ -206,14 +206,30 @@ app.get('/flat/:id',(req,res)=>  {
 
 
 
->>>>>>> dc65d4c7a3947a45f6da12dedbff5172a34745cd
+
 app.listen(process.env.PORT || port , () => {
     console.log('Listening at port https://localhost:${port}')
 })
 
 
+// function sendMail(){
+//   var params = {
+//     email: document.getElementById("emailHelp").value ,
+//     phone:document.getElementById("contactNumberField").value ,
+//     Query: document.getElementById("QueryField").value,
+//   };
+// const serviceID = "service_5vovegd";
+// const templateID = "template_3pbw70x"
+// emailjs.send(serviceID,templateID,params)
+// .then(
+//   res =>{
+//     document.getElementById("email").value="";
+//     document.getElementById("phone").value="";
+//     document.getElementById("Query").value="";
+//     console.log(res);
+//     alert("your message sent successfully");
+//   })
+// .catch((err) => console.log(err));
 
 
-
-
-
+// }

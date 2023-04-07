@@ -129,11 +129,30 @@
               </button>
             </div>
           </div>
+          <div>
+            
+              <!-- <% for( let index = 0; index < x.image.length; index++ ) { %>
+                  <div class="col-md-4">
+                      <img src="../uploads/<%=x.image[index]%>" alt="flat-image" style="margin: 60px auto;width: 200px;">
+                  </div>
+                  <%}%> -->
+          </div>
           <div id="product-images-center">
+            <% for( let index = 0; index < x.image.length; index++ ) { %>
+              <%if(index==0){%>
             <div class="product-image active">
-              <img src="../images/property-1.jpg" alt="Product 1">
+              <!-- <img src="../uploads/<%=x.image[index]%>" alt="flat-image" style="margin: 60px auto;width: 200px;"> -->
+                
+              <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
             </div>
-            <div class="product-image">
+            <%}else{%>
+              <div class="product-image">
+                <!-- <img src="../uploads/<%=x.image[index]%>" alt="flat-image" style="margin: 60px auto;width: 200px;"> -->
+                  
+                <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
+              </div>
+              <%}%>
+            <!-- <div class="product-image">
               <img src="../images/property-2.jpg" alt="Product 2">
             </div>
             <div class="product-image">
@@ -141,13 +160,21 @@
             </div>
             <div class="product-image">
               <img src="../images/blog-1.png" alt="Product 4">
-            </div>
+            </div> -->
+            <%}%>
           </div>
           <div id="product-images-thumbs">
+            <% for( let index = 0; index < x.image.length; index++ ) { %>
+              <%if(index==0){%>
             <div class="product-image-thumb active">
-              <img src="../images/property-1.jpg" alt="Product 1">
+              <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
             </div>
-            <div class="product-image-thumb">
+            <%}else{%>
+              <div class="product-image-thumb ">
+                <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
+              </div>
+              <%}%>
+            <!-- <div class="product-image-thumb">
               <img src="../images/property-2.jpg" alt="Product 2">
             </div>
             <div class="product-image-thumb">
@@ -155,8 +182,10 @@
             </div>
             <div class="product-image-thumb">
               <img src="../images/blog-1.png" alt="Product 4">
-            </div>
+            </div> -->
+            <%}%>
           </div>
+
         </div>
       </div>
       <section id="product-description">
@@ -232,10 +261,17 @@
               </button>
             </div>
             <div id="product-lightbox-content-image">
+              <% for( let index = 0; index < x.image.length; index++ ) { %>
+                <%if(index==0){%>
               <div class="product-lightbox-content-image active">
-                <img src="../images/property-1.jpg" alt="Product 1">
+                <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
               </div>
-              <div class="product-lightbox-content-image">
+              <%}else{%>
+                <div class="product-lightbox-content-image ">
+                  <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
+                </div>
+                <%}%>
+              <!-- <div class="product-lightbox-content-image">
                 <img src="../images/property-2.jpg" alt="Product 2">
               </div>
               <div class="product-lightbox-content-image">
@@ -243,7 +279,8 @@
               </div>
               <div class="product-lightbox-content-image">
                 <img src="../images/blog-1.png" alt="Product 4">
-              </div>
+              </div> -->
+              <%}%>
             </div>
             <div class="product-lightbox-arrows" id="product-lightbox-arrow-next" data-type="next">
               <button>
@@ -252,10 +289,17 @@
             </div>
           </div>
           <div id="product-lightbox-thumbs">
+            <% for( let index = 0; index < x.image.length; index++ ) { %>
+              <%if(index==0){%>
             <div class="product-lightbox-content-thumb active">
-              <img src="../images/property-1.jpg" alt="Product 1">
+              <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
             </div>
-            <div class="product-lightbox-content-thumb">
+            <%}else{%>
+              <div class="product-lightbox-content-thumb ">
+                <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
+              </div>
+              <%}%>
+            <!-- <div class="product-lightbox-content-thumb">
               <img src="../images/property-2.jpg" alt="Product 2">
             </div>
             <div class="product-lightbox-content-thumb">
@@ -263,7 +307,8 @@
             </div>
             <div class="product-lightbox-content-thumb">
               <img src="../images/blog-1.png" alt="Product 4">
-            </div>
+            </div> -->
+            <%}%>
           </div>
         </div>
       </div>

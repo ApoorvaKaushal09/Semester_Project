@@ -1,13 +1,14 @@
 <%- include("partials/header"); -%> 
   <div class="container">
-    <form>
+    <form method="get" action="/flats">
       <center>
         <input id="search_opt" type="text" placeholder="search flats according to city" name="search" />
       <input id="search_btn"type="submit" value="search" />
       </center>
       
     </form>
-
+    <ul>
+      
     <script>
       function redirectToFlatDetails(flatId) {
     window.location.href = "/flats/" + flatId; // replace with the URL of your flat details page

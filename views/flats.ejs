@@ -1,12 +1,30 @@
 <%- include("partials/header"); -%> 
+
+
   <div class="container">
-    <form method="get" action="/flats">
-      <center>
-        <input id="search_opt" type="text" placeholder="search flats according to city" name="search" />
-      <input id="search_btn"type="submit" value="search" />
-      </center>
+    <form method="post" action="/search/">
+      
+      <!-- <center> -->
+    <div style=" width: 60%; margin: auto; display: flex;">
+        <input id="search_opt" type="text" placeholder="search flats according to city" name="fltrcity" />
+        <input id="search_opt" type="text" placeholder="search price range" name="price" />
+      <input id="search_btn" type="submit" value="search" name="submit" style="width: 130px" />
+    </div>
+      <!-- </center> -->
       
     </form>
+    <!-- <div class="container">
+      <form method="post" action="/search/">
+        
+        <center>
+      <div style=" width: 50%; margin: auto;">
+          <input id="search_opt" type="text" placeholder="search flats according to city" name="fltrcity" />
+          <input id="search_opt" type="text" placeholder="search price range" name="price" />
+        <input id="search_btn" type="submit" value="search" name="submit" />
+      </div>
+        </center>
+        
+      </form> -->
     <ul>
       
     <script>
@@ -14,33 +32,15 @@
     window.location.href = "/flats/" + flatId; // replace with the URL of your flat details page
   }
     </script>
+    <p style="color:red; font-weight: 800;"><%=error%></p>
+    <%if(x.length>0){%>
     <% for( let index = 0; index < x.length; index++ ) { %>
       <div class="wrapper">
         <div class="product-img">
-          <!-- <% if (index  == 0) { %>
-            <img src="../images/property-1.jpg" height="300" width="327">
-          <% } %>
-          <%  if (index  == 1) { %>
-            <img src="../images/about-banner-2.jpg" height="300" width="327">
-          <% } %>
-          <%  if (index  == 2) { %>
-            <img src="../images/blog-2.jpg" height="300" width="327">
-          <% } %>
-          <%  if (index  == 3) { %>
-            <img src="../images/blog-3.jpg" height="300" width="327">
-          <% } %>
-          <%  if (index  == 4) { %>
-            <img src="../images/about-banner-2.jpg" height="300" width="327">
-          <% } %>
-          <%  if (index  == 5) { %>
-            <img src="../images/property-1.jpg" height="300" width="327">
-          <% } %> -->
-<<<<<<< HEAD
           <img src="../uploads/<%=x[index].image[0]%>" alt="" height="300" width="327">
-=======
-          <img src="../uploads/<%= x[index].image[0] %>" height="300" width="327" alt="">
+
+          <!-- <img src="../uploads/<%= x[index].image[0] %>" height="300" width="327" alt=""> -->
           
->>>>>>> 0e3602e8b1c966edb3aadfcdf522b4fe352c4f07
         </div>
         <div class="product-info">
           <div class="product-text">
@@ -63,7 +63,9 @@
           </div>
         </div>
       </div>
-    <% } %>
+    <% }}else{ %>
+      <center><p style="color:red; font-weight: 800;">No Record Found</p></center> 
+      <%}%>
   </div>
   
 

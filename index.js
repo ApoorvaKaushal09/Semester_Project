@@ -51,10 +51,47 @@ var upload=multer({
 
 app.get('/flats',(req,res)=>  {
   collection2.find({}).then((x) =>{
-    res.render("flats", {x, route:'/flats'})
+    res.render("flats", {x, route:'/flats',error:""})
   }).catch((y) => {
     console.log(y)
   })
+})
+app.post('/search/',(req,res)=>  {
+  var loc=req.body.fltrcity;
+  var price=req.body.price;
+  console.log(price)
+  console.log(loc)
+  if(loc!='' && price!='')
+  {
+    var parameter={fcity:loc,fprice:{$lte:price}}
+  }
+    else if(loc!='' && price=='')
+    {
+      var parameter={fcity:loc}
+    }
+    else if(loc=='' && price!='')
+    {
+      var parameter={fprice:{$lte:price}}
+    }
+    else
+    {
+      var parameter={}
+    }
+    // else{
+    //   collection2.find({}).then((x) =>{
+    //     res.render("flats", {x, route:'/flats',error:"Enter the City"})
+    //   }).catch((y) => {
+    //     console.log(y)
+    //   })
+    // }
+  collection2.find(parameter).then((x) =>{
+    console.log(x);
+    res.render("flats", {x, route:'/flats',error:""})
+  }).catch((y) => {
+    res.render("flats", {y, route:'/flats',error:"No Record Found"})
+    console.log(y)
+  })
+
 })
 
 

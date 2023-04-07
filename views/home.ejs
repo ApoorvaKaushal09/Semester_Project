@@ -120,7 +120,7 @@
 
         </div>
       </section>
-
+      
 
 
 
@@ -218,6 +218,103 @@
         </div>
       </section>
 
+      <!-- Contact us section -->
+
+ <section id ="Contact_us_section" class="py-5 background1">
+  <div class = "container">
+    <h2 class="h2 section-title">Contact us</h3>
+      <!-- <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("YOUR_PUBLIC_KEY");
+   })();
+</script> -->
+    <div class ="row">
+    <div class="col-md-12">
+
+      <form action= "https://formsubmit.co/f6373408e8ecd954e1a7553823ad3912" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="h3 card-title">Your Email address</label>
+          <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="contactNumberField" class="h3 card-label">Your Contact number</label>
+          <input name="phone" type="number" class="form-control" id="contactNumberField">
+        </div>
+
+        <div class="mb-3">
+          <label for="QueryField" class="h3 card-label">Your Query</label>
+          <textarea name="query" style="height: 150px;" class="form-control" placeholder="Enter your query here" id="QueryField"></textarea>
+
+        </div>
+        <div  class = "container text-center">
+        <button type="submit" class="btn btn-dark">Submit</button>
+        <!-- </div> -->
+        </div>
+      </form>
+
+
+      <!-- <script>
+        const form = useRef();
+       const sendEmail = (e) => {
+         e.preventDefault();
+          emailjs.sendForm('service_z1sawkh', 'template_9t9pkqc', form.current, 'a2e3HA2VbH4dJLZ9z').then((result) => 
+          {
+             console.log(result.text);
+             
+             console.log("message sent"); 
+             alert("Message sent Successfully"); 
+            }, (error) => { console.log(error.text); }); };
+      </script>
+      <div class='container my-5 pt-5'>
+        <div classNmae="container my-5 pt-5">
+            <h2><strong>Contact Us</strong></h2>
+        </div>
+        <div class='container text-center mt-4 p-4'>
+            <p><strong>Do you see anything you would like to be improved? Or maybe you have a functionality in mind you would like to see? Enter it in the suggestion box below. <br/>Thank you</strong></p>
+        </div>
+        <div class='container mt-1 mb-5 pb-5' >
+            <form class="mt-5" ref={form} onSubmit={sendEmail}>
+                <div class="mb-3 text-start mt-5">
+                    <label for="name" class="form-label"><strong>Name</strong></label>
+                    <input type="text" name="user_name" class="form-control" placeholder="Enter your name"  required/>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="email address" class="form-label" ><strong>Email Address</strong></label>
+                    <input type="email" name="user_email" class="form-control" placeholder="Enter your email address"  required/>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="message" class="form-label" ><strong>Message</strong></label>
+                    <textarea name="message" class="form-control" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="mb-2 mt-5">
+                    <button type="submit" ><strong>Submit</strong></button>
+                    <button type="reset"><strong>Reset</strong></button>
+                </div>
+
+            </form>
+        </div>
+    </div> -->
+
+
+
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+ </div>
+ </section>
+
       <!-- 
         - #PROPERTY
       -->
@@ -227,8 +324,7 @@
         - #BLOG
       -->
 
-      
-
+    
 
 
 
@@ -257,6 +353,14 @@
 
     </article>
   </main>
+
+  <script>
+    function sendEmail() 
+{
+    window.location = "mailto:btbtc20133_adhisa@banasthali.in";
+}
+  </script>
+
 
   <%- include("partials/footer"); -%> 
 

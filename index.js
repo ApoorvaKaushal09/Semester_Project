@@ -3,7 +3,6 @@ const path = require('path')
 const ejs = require("ejs");
 const multer  = require('multer')
 const bodyParser = require('body-parser')
-const auth = require('./middleware/auth')
 
 const app = express()
 const port = 3000
@@ -72,7 +71,7 @@ app.post('/upload',upload.single("file"),async (req,res)=>  {
   res.render("upload")
 })
 
-app.get('/sell', auth, (req,res)=>  {
+app.get('/sell', (req,res)=>  {
     res.render("sell", { route:'/sell'})
   
 })

@@ -41,10 +41,47 @@ app.use('/sell' , require(path.join(__dirname, 'routes/blog.js')))
 
 app.get('/flats',(req,res)=>  {
   collection2.find({}).then((x) =>{
-    res.render("flats", {x, route:'/flats'})
+    res.render("flats", {x, route:'/flats',error:""})
   }).catch((y) => {
     console.log(y)
   })
+})
+app.post('/search/',(req,res)=>  {
+  var loc=req.body.fltrcity;
+  var price=req.body.price;
+  console.log(price)
+  console.log(loc)
+  if(loc!='' && price!='')
+  {
+    var parameter={fcity:loc,fprice:{$lte:price}}
+  }
+    else if(loc!='' && price=='')
+    {
+      var parameter={fcity:loc}
+    }
+    else if(loc=='' && price!='')
+    {
+      var parameter={fprice:{$lte:price}}
+    }
+    else
+    {
+      var parameter={}
+    }
+    // else{
+    //   collection2.find({}).then((x) =>{
+    //     res.render("flats", {x, route:'/flats',error:"Enter the City"})
+    //   }).catch((y) => {
+    //     console.log(y)
+    //   })
+    // }
+  collection2.find(parameter).then((x) =>{
+    console.log(x);
+    res.render("flats", {x, route:'/flats',error:""})
+  }).catch((y) => {
+    res.render("flats", {y, route:'/flats',error:"No Record Found"})
+    console.log(y)
+  })
+
 })
 
 app.get('/upload',(req,res)=>  {
@@ -59,12 +96,14 @@ app.get('/upload',(req,res)=>  {
 
 app.post('/upload',upload.single("file"),async (req,res)=>  {
   // console.log(image)
+  if(!req.files || req.files.length<4)
+  return res.render("upload",{x,error:"at least 4 photos uploaded",route:'/upload'});
   const imagedetails={
     imagename:req.file.filename
   };
   await collection3.insertMany([imagedetails]);
   collection3.find({}).then((x) =>{
-    res.render("upload", {x, route:'/upload'})
+    res.render("upload", {x,error:"at least 4 photos uploaded", route:'/upload'})
   }).catch((y) => {
     console.log(y)
   })
@@ -76,7 +115,9 @@ app.get('/sell', auth, (req,res)=>  {
     res.render("sell", { route:'/sell'})
   
 })
-app.post("/sell",upload .fields([{name:"pdfFile",maxCount:1},{name:"imageFile",maxCount:10}]),async (req, res) => {
+app.post("/sell",upload .fields([{name:"pdfFile",maxCount:1},{name:"imageFile",minCount:4,maxCount:10}]),async (req, res) => {
+  if(!req.files || req.files.length<4)
+  return res.render("sell",{error:"at least 4 photos uploaded"});
   const data = {
     description: req.body.description,
     fname: req.body.fname,

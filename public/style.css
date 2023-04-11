@@ -1,4 +1,8 @@
 
+body{
+  
+}
+
 :root {
 
 
@@ -129,7 +133,7 @@ button, a { transition: var(--transition); }
 
 .h3 > a { color: inherit; }
 
-.btn {
+.btn-home {
   position: relative;
   background: var(--orange-soda);
   color: var(--white);
@@ -141,13 +145,13 @@ button, a { transition: var(--transition); }
   z-index: 1;
 }
 
-.btn:is(:hover, :focus) {
+.btn-home:is(:hover, :focus) {
   background: var(--black);
   color: var(--dark-jungle-green);
   border-color: var(--black);
 }
 
-.btn::before {
+.btn-home::before {
   content: "";
   position: absolute;
   top: 0;
@@ -159,7 +163,7 @@ button, a { transition: var(--transition); }
   z-index: -1;
 }
 
-.btn:is(:hover, :focus)::before { width: 100%; }
+.btn-home:is(:hover, :focus)::before { width: 100%; }
 
 .w-100 { width: 100%; }
 
@@ -512,7 +516,7 @@ button, a { transition: var(--transition); }
   margin-bottom: 40px;
 }
 
-.about .btn {
+.about .btn-home {
   max-width: max-content;
   --text-transform: uppercase;
 }
@@ -988,7 +992,9 @@ button, a { transition: var(--transition); }
   gap: 15px;
   margin-bottom: 30px;
 }
-
+#Contact_us_section{
+  background-color: (--cultured-1);
+}
 .contact-link {
   display: flex;
   align-items: flex-start;
@@ -1124,7 +1130,7 @@ button, a { transition: var(--transition); }
 
   .container { max-width: 720px; }
 
-  .btn {
+  .btn-home {
     --fs-5: 1rem;
     padding: 12px 28px;
   }
@@ -1219,7 +1225,9 @@ button, a { transition: var(--transition); }
 }
 
 
-
+.abode-nav{
+  font-family: 'Gafata', sans-serif;
+}
 
 
 
@@ -1240,7 +1248,7 @@ button, a { transition: var(--transition); }
 
   .container { max-width: 970px; }
 
-  .btn { padding: 15px 40px; }
+  .btn-home { padding: 15px 40px; }
 
 
 
@@ -1685,3 +1693,37 @@ strong{
   margin: 10px;
 }
 
+/* Testimonials */
+#testimonials{
+  text-align: center;
+  background-color: (--cultured-2);
+  color: #fff;
+}
+.testimonial-image{
+  width: 10%;
+  border-radius: 50%;
+  margin: 20px;
+}
+.carousel-item{
+  padding: 7% 15%;
+}
+.testimonial-text{
+  color: #080808;
+  line-height: 1.5;
+  font-size: 3rem;
+}
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+.press{
+  background-color: #ef8172;
+  text-align: center;
+  padding-bottom: 3%;
+
+}
+.press-images{
+  width: 15%;
+  margin: 20px 20px 50px;
+  
+}

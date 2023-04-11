@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,114 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="../images2/favicon-32x32.png">
   <title>Flat-Details Page</title>
-  <link rel="stylesheet" href="..//product.css">
-  <!-- <link rel="stylesheet" href="..//style.css"> -->
-  <link rel="stylesheet" href="..//media-queries.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.google.com/specimen/Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <!-- <script defer src="./js/script.js"></script> -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Gafata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
 </head>
 <body>
 
-  <!-- <header role="header" id="header">
-    <div class="container">
-      <div id="header-menu">
-        <a href="javascript:void(0);">
-          <img src="../images2/icon-menu.svg" alt="Menu">
-        </a>
-      </div>
-      <div id="header-logo">
-        <img src="../images2/logo.svg" alt="Sneakers" />
-      </div>
-      <nav id="header-menu-middle">
-        <div id="header-menu-middle-container">
-          <div id="header-menu-middle-close">
-            <a href="javascript:void(0);">
-              <img src="../images2/icon-close.svg" alt="Close" />
-            </a>
-          </div>
-          <ul class="clearfix">
-            <li><a href="javascript:void(0);">Collections</a></li>
-            <li><a href="javascript:void(0);">Men</a></li>
-            <li><a href="javascript:void(0);">Women</a></li>
-            <li><a href="javascript:void(0);">About</a></li>
-            <li><a href="javascript:void(0);">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div id="header-menu-right">
-        <ul>
-          <li id="header-menu-right-cart-button">
-            <a href="javascript:void(0);">
-              <span id="header-menu-right-cart-badge">0</span>
-              <img src="../images2/icon-cart.svg" alt="Cart">
-            </a>
-          </li>
-          <li id="header-menu-right-profile-image">
-            <a href="javascript:void(0);">
-              <img src="../images2/image-avatar.png" alt="Profile">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <section id="cart">
-    <div id="cart-header">
-      <h3 id="cart-title">Cart</h3>
-    </div>
-    <div id="cart-body">
-      <div id="cart-empty">
-        <h4 id="cart-empty-message">Your cart is empty</h4>
-      </div>
-      <div id="cart-items">
-        <div id="cart-items-container">
-          <section class="cart-item clearfix">
-            <img src="../images2/image-product-1-thumbnail.jpg" class="cart-item-image" alt="Autum Limited Edition">
-            <div class="cart-item-middle">
-              <h5>Autum Limited Edition</h5>
-              <p>
-                $<span class="cart-item-middle-price">0.00</span> 
-                x 
-                <span class="cart-item-middle-quantity">1</span> 
-                <strong>$<span class="cart-item-middle-amount"></span></strong>
-              </p>
-            </div>
-            <div class="cart-item-delete">
-              <a href="javascript:void(0);">
-                <img src="../images2/icon-delete.svg" alt="Delete">
-              </a>
-            </div>
-          </section>
-        </div>
-        <div id="cart-items-checkout">
-          <button class="btn">
-            Checkout
-          </button>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <section>
+ 
+  <section class="abode-nav">
        
 
     <div class="topnav" id="top">
-      <!-- <a type="button" class="btn">Success</a> -->
-      <a class="signup" href="/login">Sign Up/Log In</a>
-      <a href="/#contact">Contact</a>
+      
+       
+      <a href="#contact">Contact</a>
       <a href="/flats">Flats</a>
       <a href="/sell">Sell</a>
       <a href="/#service">Services</a>
       <a href="/#about">About</a>
       <a href="/">Home</a>
 
-  <div id="leftii">
-    <a href="/"><img class="imgedit" src="images/logo-1.png"/></a>
+  <div>
+    <a style="float: left; margin-left: 100px; font-weight: 700; font-family: 'Gafata', sans-serif;
+    font-family: 'Mochiy Pop One', sans-serif;" href="/">Abode</a>
   </div>
 </div>
 </section>
+
+
+
+
+
+
+<link rel="stylesheet" href="..//product.css">
+<link rel="stylesheet" href="..//media-queries.css">
   <main class="main" role="main">
     <div class="container clearfix">
       <div id="product-gallery">
@@ -140,9 +75,7 @@
           <div id="product-images-center">
             <% for( let index = 0; index < x.image.length; index++ ) { %>
               <%if(index==0){%>
-            <div class="product-image active">
-              <!-- <img src="../uploads/<%=x.image[index]%>" alt="flat-image" style="margin: 60px auto;width: 200px;"> -->
-                
+            <div class="product-image active">  
               <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
             </div>
             <%}else{%>
@@ -152,15 +85,7 @@
                 <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
               </div>
               <%}%>
-            <!-- <div class="product-image">
-              <img src="../images/property-2.jpg" alt="Product 2">
-            </div>
-            <div class="product-image">
-              <img src="../images/property-3.jpg" alt="Product 3">
-            </div>
-            <div class="product-image">
-              <img src="../images/blog-1.png" alt="Product 4">
-            </div> -->
+      
             <%}%>
           </div>
           <div id="product-images-thumbs">
@@ -174,15 +99,7 @@
                 <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
               </div>
               <%}%>
-            <!-- <div class="product-image-thumb">
-              <img src="../images/property-2.jpg" alt="Product 2">
-            </div>
-            <div class="product-image-thumb">
-              <img src="../images/property-3.jpg" alt="Product 3">
-            </div>
-            <div class="product-image-thumb">
-              <img src="../images/blog-1.png" alt="Product 4">
-            </div> -->
+          
             <%}%>
           </div>
 
@@ -225,20 +142,10 @@
                 <%= x.size %>
             </span>
           </span>
-         
-          <!-- <span id="product-descount-price">$250.00</span> -->
         </div>
 
         <div id="product-footer">
-          <!-- <div id="product-amount">
-            <button class="product-amount-button" id="product-amount-minus" data-type="minus">
-              <img src="../images2/icon-minus.svg" alt="Minus">
-            </button>
-            <input type="number" id="product-amount-value" value="0" min="0" max="999" />
-            <button class="product-amount-button" id="product-amount-plus" data-type="plus">
-              <img src="../images2/icon-plus.svg" alt="Plus">
-            </button>
-          </div> -->
+       
           <div id="product-btn">
             <button class="btn btn-shadown" id="btn-add-to-cart">
               <!-- <img src="../images2/icon-cart.svg" alt="Cart"> -->
@@ -271,15 +178,6 @@
                   <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
                 </div>
                 <%}%>
-              <!-- <div class="product-lightbox-content-image">
-                <img src="../images/property-2.jpg" alt="Product 2">
-              </div>
-              <div class="product-lightbox-content-image">
-                <img src="../images/property-3.jpg" alt="Product 3">
-              </div>
-              <div class="product-lightbox-content-image">
-                <img src="../images/blog-1.png" alt="Product 4">
-              </div> -->
               <%}%>
             </div>
             <div class="product-lightbox-arrows" id="product-lightbox-arrow-next" data-type="next">
@@ -299,15 +197,6 @@
                 <img src="../uploads/<%=x.image[index]%>" alt="Product 1">
               </div>
               <%}%>
-            <!-- <div class="product-lightbox-content-thumb">
-              <img src="../images/property-2.jpg" alt="Product 2">
-            </div>
-            <div class="product-lightbox-content-thumb">
-              <img src="../images/property-3.jpg" alt="Product 3">
-            </div>
-            <div class="product-lightbox-content-thumb">
-              <img src="../images/blog-1.png" alt="Product 4">
-            </div> -->
             <%}%>
           </div>
         </div>
@@ -315,12 +204,7 @@
     </div>
   </main>
 
-  <!-- <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="https://github.com/tadeubdev">Tadeu Barbosa</a>.
-    </div>
-  </footer> -->
+
   <script>
 
 window.addEventListener('load', () => {

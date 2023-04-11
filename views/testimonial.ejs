@@ -1,0 +1,72 @@
+<%- include("partials/header"); -%> 
+
+    <section class="hero" id="home" style="background:hsl(192, 24%, 96%); padding-block:100px">
+        <div class="container1" style="margin: auto;
+        width: 34%;
+        background-color: white;
+        border-radius: 10px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    " >
+           <!-- <form action="/signup"> -->
+          <!--<div class="hero-content" style="margin:auto;"> -->
+            <!-- Pills navs -->
+<ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+    <li class="nav-item" role="presentation">  <h2 class="tab-login" style="margin-top: 48px;">Add Your Testimonial</h2>
+    </li>
+  </ul>
+  <!-- Pills navs -->
+  <div class="tab-content" style="margin: 35px;height: 500px;">
+    <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+        <form action="/testimonial" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+         
+         <!-- Name input -->
+         <div class="form-outline mb-2">
+          <label class="form-label" for="registerEmail">Name</label>
+        <input type="text" id="registerEmail" class="form-control" name="name"/>
+        
+      </div>
+
+      <div class="form-outline mb-2">
+        <label class="form-label" for="registerEmail">location</label>
+      <input type="text" id="registerEmail" class="form-control" name="loc"/>
+      
+    </div>
+    <div class="form-outline mb-2">
+      <label class="form-label" for="registerEmail">Gender</label>
+      <input class = "radio_btn" type="radio" id="male" name="gender" value="male">
+      <label class = "radio_btn" for="male">Male</label>
+      <input class = "radio_btn" type="radio" id="female" name="gender" value="female">
+      <label class = "radio_btn" for="female">Female</label>
+      <input class = "radio_btn" type="radio" id="lgbt" name="gender" value="lgbt">
+      <label class = "radio_btn" for="lgbt">LGBT</label>
+    <!-- <input type="text" id="registerEmail" class="form-control" name="Gender"/> -->
+    
+  </div>
+    <div class="form-outline mb-2">
+      <label class="form-label" for="registerEmail">Views</label>
+    <input type="text" id="registerEmail" class="form-control" name="views"/>
+    
+  </div>
+  <button type="submit" class="btn-home btn-danger" style="margin-left: 154px;margin-top: 20px;margin-bottom: 20px;">Submit</button>
+        
+       
+      </form>
+    </div>
+    </div>
+  </div>
+  <!-- Pills content -->
+                
+             <!-- </div> -->
+            
+            <!-- </form> -->
+          </div>
+    </section>   
+
+  </body>
+</html>
+
+ 
+
+<%- include("partials/footer"); -%> 

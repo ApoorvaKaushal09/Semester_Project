@@ -1,4 +1,72 @@
-<%- include("partials/header"); -%> 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abode - Find your dream house</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <!-- 
+    - favicon
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="..//style.css">
+  <link rel="stylesheet" href="./login.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gafata&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gafata&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+  <section class="abode-nav">
+       
+
+        <div class="topnav" id="top">
+          <% if(loginUser){ %>
+            <a class="signup" href="/dashboard"><img width="40px" src="../images/man.png" alt=""></a>
+            <% }else { %>
+              <a class="signup" href="/login">Sign Up/Log In</a>
+            <% } %>
+           
+          <a href="/#contact">Contact</a>
+          <a href="/flats">Flats</a>
+          <a href="/sell">Sell</a>
+          <a href="/#service">Services</a>
+          <a href="/#about">About</a>
+          <a href="/">Home</a>
+
+      <div>
+        <a style="float: left; margin-left: 100px; font-weight: 700; font-family: 'Gafata', sans-serif;
+        font-family: 'Mochiy Pop One', sans-serif;" href="/">Abode</a>
+      </div>
+    </div>
+  </section>
+  
   <main>
     <article>
       <section class="hero" id="home" style="padding-top: 50px;">
@@ -29,7 +97,7 @@
 
 
             </p>
-            <a href="#contact"><button class="btn">Contact Us</button></a>
+            <a href="#contact"><button class="btn-home">Contact Us</button></a>
 
           </div>
 
@@ -130,7 +198,7 @@
               "Unlock a world of possibilities for your housing needs with our one-stop platform for buying, selling, renting and finding your dream home."
             </p>
 
-            <a href="#service" class="btn">Our Services</a>
+            <a href="#service" class="btn-home">Our Services</a>
 
           </div>
 
@@ -234,9 +302,107 @@
         </div>
       </section>
 
+
+
+
+    
+
+
+<!-- Testimonials Section -->
+<!-- <center><u><h1 class="container" style="font-weight: bolder;">TESTIMONIALS</h1></u></center>
+    <hr>
+    <center> -->
+        <section id="testimonials">
+            <div id="testimonial-carousel" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-inner">
+                <% for (let i = 0; i < x.length; i++) { %>
+                  <% if (i === 0) { %>
+                <div class="carousel-item active">
+                  
+            <h2 class="testimonial-text"><%=x[i].views%></h2>
+
+            <center>
+              <% if(x[i].gender === 'male'){ %>
+              <img  class="testimonial-image" src="../images/testi_man.png" alt="dog-profile">
+                <% }else if(x[i].gender === 'female') {%>
+                  <img  class="testimonial-image" src="../images/testi_woman.png" alt="dog-profile">
+                  <% }else { %>
+                    <img  class="testimonial-image" src="../images/testi_lgbt.png" alt="dog-profile">
+                    <% } %>
+            </center>
+
+            <em style="color: black;"><%= x[i].name %>, <%= x[i].loc %></em>
+        
+                </div>
+                <% } else { %>
+                <div class="carousel-item">
+                  <h2 class="testimonial-text"><%= x[i].views %></h2>
+                  <center>
+                    <% if(x[i].gender === 'male'){ %>
+                    <img  class="testimonial-image" src="../images/testi_man.png" alt="dog-profile">
+                      <% }else if(x[i].gender === 'female') {%>
+                        <img  class="testimonial-image" src="../images/testi_woman.png" alt="dog-profile">
+                        <% }else { %>
+                          <img  class="testimonial-image" src="../images/testi_lgbt.png" alt="dog-profile">
+                          <% } %>
+                  </center>
+                  <em style="color: black;" ><%= x[i].name %>, <%= x[i].loc %></em>
+        
+                </div>
+                <%}%>
+                <%}%>
+                
+              </div>
+            
+              <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              
+              </a>
+              <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-bs-slide="next">
+                <span style="color: black;" class="carousel-control-next-icon" aria-hidden="true"></span>
+                
+              </a>
+
+            
+            </div>
+            <a href="/testimonial"><button style="margin-bottom: 40px;" type="button" class="btn btn-dark">Add Yours</button></a>
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- Contact us section -->
 
- <section id ="Contact_us_section" class="py-5 background1">
+ <section id ="Contact_us_section" style="background-color: hsl(0, 0%, 93%);;" class="py-5 background1">
   <div class = "container">
     <h2 class="h2 section-title">Contact us</h3>
       <!-- <script type="text/javascript"
@@ -357,7 +523,7 @@
               <p class="card-text">We can help you realize your dream of a new home</p>
             </div>
 
-            <a href="/flats"><button class="btn cta-btn">
+            <a href="/flats"><button class="btn-home cta-btn">
               <span>Explore Properties</span>
 
               <ion-icon name="arrow-forward-outline"></ion-icon>

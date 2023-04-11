@@ -21,8 +21,16 @@ const SignupSchema = new mongoose.Schema({
      }
     ,
     contact:{
-        type: String, 
-        // required:true
+      type: Number,
+      // validate: {
+      //       validator: function(v) {
+      //           if(/\d{10}/.test(v))
+      //           {
+
+      //           }
+      //       },
+      //       message: props => `${props.value} is not a valid phone number!`
+      //   }
     }
 
 });
@@ -39,8 +47,8 @@ const flatSchema = new mongoose.Schema({
     },
   
     fcontact: {
-      type: String,
-      required: true,
+      type: Number,
+      required: true
     },
   
     floc: {
@@ -98,9 +106,30 @@ const uplaodschema=new mongoose.Schema({
   // }
 
 });
+const tschema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+
+  loc: {
+    type: String,
+    required: true,
+  },
+
+  views: {
+    type: String,
+    required: true,
+  },
+  gender: { 
+    type: String, 
+    required: true
+  }
+});
 
 
 const collection = new mongoose.model("userSignup", SignupSchema)
 const collection2 = new mongoose.model("flatDetails", flatSchema)
 const collection3= new mongoose.model("uploadfiles",uplaodschema)
-module.exports = {collection, collection2,collection3};
+const collection4 = new mongoose.model("testimonials", tschema);
+module.exports = {collection, collection2,collection3, collection4};

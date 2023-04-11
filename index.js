@@ -50,10 +50,11 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 
 app.get('/', (req, res) => {
   var loginUser = localStorage.getItem('loginUser')
+  var loginId = localStorage.getItem('loginId')
   collection4.find({}).then((x) => {
     if (x.length >= 0) {
       // console.log(x)
-      res.render("home", { x,loginUser:loginUser });
+      res.render("home", { x,loginUser:loginUser, loginId });
     } else {
       res.send("No data found.");
     }
@@ -143,6 +144,7 @@ app.post("/sell", checkLoginUser,upload .fields([{name:"pdfFile",maxCount:1},{na
     ftype: req.body.ftype,
     furnish: req.body.furnish,
     size: req.body.size,
+    email:req.body.email,
     image:req.files.imageFile.map(imageFile=>imageFile.filename),
     propDocument:{
       name:req.files.pdfFile[0].filename,
@@ -176,8 +178,18 @@ app.post('/signup', async(req, res) => {
 
 app.get('/dashboard', checkLoginUser, (req, res) => {
   var loginUser = localStorage.getItem('loginUser')
+  var loginId = localStorage.getItem('loginId')
+  var fid = localStorage.getItem('fid')
+  var uname = localStorage.getItem('uname')
+  var ucontact = localStorage.getItem('ucontact')
+  var fcity = localStorage.getItem('fcity')
+  var fdescription = localStorage.getItem('fdescription')
+  var floc = localStorage.getItem('floc')
+  var fsize = localStorage.getItem('fsize')
+  // console.log(flat)
+  // console.log(loginId)
   // res.send("User Dash")
-  res.render("dashboard", { loginUser : loginUser })
+  res.render("dashboard", { loginUser : loginUser, loginId : loginId , fid, uname, ucontact, fcity, fdescription, floc, fsize})
 })
 
 app.get('/sell', checkLoginUser, (req, res) => {
@@ -189,22 +201,51 @@ app.get('/sell', checkLoginUser, (req, res) => {
 app.post("/login", async function(req, res){
   try {
       const user = await collection.findOne({ email: req.body.email });
+      const flat = await collection2.findOne({email:req.body.email})
+
+          var id = user._id;
+          var fid = null;
+          var uname = user.name
+          var ucontact = user.contact
+          var fname = null
+          var fcity = null
+          var fdescription = null
+          var floc = null
+          var fsize = null
+          if(flat){
+            fcity = flat.fcity
+            fid = flat._id;
+            fname = flat.fname
+            fdescription = flat.description
+            floc = flat.floc
+            fsize = flat.size
+          } 
       if (user) {
         const result = req.body.password === user.password;
         if (result) {
-          var id = user._id;
+          
+          console.log(fname);
           var token = jwt.sign({ userId : id }, 'loginToken');
           localStorage.setItem('userToken', token);
           localStorage.setItem('loginUser', req.body.email);
+          localStorage.setItem('loginId', id);
+          localStorage.setItem('fid', fid)
+          localStorage.setItem('uname', uname)
+          localStorage.setItem('ucontact', ucontact)
+          localStorage.setItem('fcity', fcity)
+          localStorage.setItem('fdescription', fdescription)
+          localStorage.setItem('floc', floc)
+          localStorage.setItem('fsize', fsize)
           res.redirect('/');
         } else {
           res.status(400).json({ error: "password doesn't match" });
         }
-      } else {
+      }
+      else {
         res.status(400).json({ error: "User doesn't exist" });
       }
     } catch (error) {
-      res.status(400).json({ error });
+      // res.status(400).json({ error });
     }
 });
 app.get('/rent', function(req, res){
@@ -225,7 +266,15 @@ app.get('/flats/:id',(req,res)=>  {
 app.get('/logout', (req, res, next) => {
   localStorage.removeItem('userToken');
   localStorage.removeItem('loginUser');
-  res.send("Logged out")
+  localStorage.removeItem('loginId')
+  localStorage.removeItem('fid')
+  localStorage.removeItem('uname')
+  localStorage.removeItem('ucontact')
+  localStorage.removeItem('fcity')
+  localStorage.removeItem('fdescription')
+  localStorage.removeItem('floc')
+  localStorage.removeItem('fsize')
+  res.render('logout')
 })
 
 app.post("/testimonial", async (req, res) => {

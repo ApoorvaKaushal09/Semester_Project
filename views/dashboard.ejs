@@ -1,6 +1,193 @@
-<%- include("partials/header"); -%> 
-<h1>Logged in as : <% if(loginUser){ %> <%= loginUser %> <% } %></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Information</title>
+    <style>
+      /* CSS styles for the page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: hsl(0, 0%, 93%);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      #user-info {
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 20px;
+        /* border: 1px solid #cccccc; */
+        border-radius: 5px;
+        flex: 1 1 5%;
+        margin-right: 20px;
+      }
+      #user-info h1 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+      #user-info p {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      #flat-list {
+        margin: 20px;
+        background-color: #ffffff;
+        /* padding: 20px; */
+        /* border: 1px solid #cccccc; */
+        border-radius: 5px;
+        flex: 1 1 45%;
+      }
+      #flat-list h2 {
+        font-size: 20px;
+        margin-top: 0;
+      }
+      .flat-card {
+        background-color: #ffffff;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .flat-card-image {
+        flex: 1 1 40%;
+        margin-right: 20px;
+      }
+      .flat-card-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .flat-card-details {
+        flex: 1 1 60%;
+      }
+      .flat-card-details h3 {
+        font-size: 18px;
+        margin-top: 0;
+      }
+      .flat-card-details p {
+        font-size: 16px;
+        margin: 10px 0;
+      }
+     </style>
+     <script>
+      function redirectToFlatDetails(flatId) {
+    window.location.href = "/flats/" + flatId; // replace with the URL of your flat details page
+  }
+    </script>
+    <link rel="stylesheet" href="..//style1.css">
+    <link rel="stylesheet" href="..//style.css">
+  </head>
+  <body style="background-color:hsl(0, 0%, 93%);">
+    <!-- <div class="con" style="display: flex;"> -->
+    <%if(loginUser){%>
+    <div id="user-info">
+        <h2 style="font-size: 40px;">User Details</h2>
+        <div class="card1">
+            
+            <div class="card_profile_img">
+              <center><img style="width: 100px;" src="../images/man.png" alt=""></center>
+
+
+            </div>
+            <div class="user_details">
+                <h3><%=uname%></h3>
+                <p class="info">User</p>
+            </div>
+            <div class="card_count">
+                <div class="count">
+                    <div class="fans">
+                        <h3>Email:</h3>
+                        <p class="info"><%=loginUser%></p>
+                    </div>
+                    <div class="following">
+                        <h3>Contact</h3>
+                        <p class="info"><%=ucontact%></p>
+                    </div>
+            
+                </div>
+           
+            </div>
+        </div>
+    </div>
+    <%}else{%>
+      <p style="color:
+      red;">No record Found</p>
+      <%}%>
+      
+    <%if(loginUser){%>
+        <%for(let i=0; i < 1; i++){ %>
+
+          <div id="flat-list">
+
+              <h2 style="font-size: 40px;margin-bottom: 10px;">Flat Details</h2>
+        <!-- <div class="card1"> -->
+                <div class="wrapper" style="height:350px; margin: 0px; width:100%; margin-left:4px;">
+                    <div class="product-img" style="height:250px;    margin-right: 10px;">
+                      <img src="../images/service-2.png" alt="" height="250px" width="320px" >
+                      
+                    </div>
+                <div class="product-info" style="height: 350px; float:none">
+                    <div class="product-text" style="height: 250px;text-align: left;width: 870px;">
+                      <h1><%= fcity %></h1>
+                      <h2><%= uname %></h2>
+                      <p>  <%= fdescription %><br>
+                      <strong>Address:</strong> <%= floc %> 
+                      <br><strong>Size</strong> <%= fsize %></p>
+                      <a style="width: 20%; margin-top: 30px; float: right;" href="/flats/<%= fid %>"><button class="btn btn-primary">View</button></a>
+                        
+                        
+                    
+                </div>
+                
+               
+                </div>
+                
+                </div>
+                
+              </div>
+              <a href="/logout"><button style="margin-top: 500px; margin-right: px; width: 100px; margin-left: -500px; float: left;" class="btn btn-primary">Logout</button></a>
     
-    <a href="/logout"><button class="btn btn-primary">Logout</button></a>
-</body>
+    <%}}else{%>
+      <div id="flat-list">
+
+      <h2 style="font-size: 40px;margin-bottom: 10px; text-align: centre;">no data found</h2>
+    </div>
+        <%}%>
+      </div>
+    <!-- </div> -->
+
+    
+  </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

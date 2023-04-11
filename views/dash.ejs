@@ -1,0 +1,180 @@
+<html>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+<head>
+    <!-- <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+    <link rel="stylesheet" href="..//style1.css">
+
+   
+    <body>
+        <div class="largecon">
+        <div class="card1">
+            <div class="card_profile_img"></div>
+            <div class="user_details">
+                <h3><%=user.name%></h3>
+                <p class="info">User</p>
+            </div>
+            <div class="card_count">
+                <div class="count">
+                    <div class="fans">
+                        <h3>Email:</h3>
+                        <p class="info"><%=user.email%></p>
+                    </div>
+                    <div class="following">
+                        <h3>Contact</h3>
+                        <p class="info"><%=user.contact%></p>
+                    </div>
+                    <!-- <div class="post">
+                        <h3>552</h3>
+                        <p class="info">Posts</p>
+                    </div> -->
+                </div>
+                <div class="btni">
+                    <div class="btn">edit</div>
+                 <div class="btn">delete</div>
+                </div>
+                 
+            </div>
+        </div>
+        <%if(flat!=''){%>
+            <%for(let i=0; i < flat.length ; i++){ %>
+            <!-- <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="..." class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+        <!-- <div class="card"> -->
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="../uploads/<%=flat[i].image[0]%>" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <!-- <h4 class="card-title"><%=flat[i].fname%></h4> -->
+                  <h1><%= flat[i].fcity %></h1>
+            <h2><%=flat[i].fname %></h2>
+            <p>  <%=flat[i].description %><br>
+            <strong>Address:</strong> <%= flat[i].floc %> 
+                  <!-- <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p> -->
+                  <div class="product-price-btn">
+                    <p><span><%= flat[i].fprice %></span>Rs.</p>
+                    <button type="button" onclick="redirectToFlatDetails('<%= flat[i].id %>')">View Flat</button>
+                    <!-- <button type="button" >View Flat</button> -->
+                  </div>
+                  <!-- <button type="button" onclick="redirectToFlatDetails('<%= flat[i].id %>')">View Flat</button> -->
+                  <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+                </div>
+              </div>
+            <!-- <div class="card_background_img"></div> -->
+            <!-- <div class="card_profile_img"></div>
+            <div class="user_details">
+                <h3><%=flat[i].fname%></h3>
+                <p class="info">User</p>
+            </div>
+            <div class="card_count">
+                <div class="count">
+                    <div class="fans">
+                        <h3>Email:</h3>
+                        <p class="info"><%=flat[i].description%></p>
+                    </div>
+                    <div class="following">
+                        <h3>Contact</h3>
+                        <p class="info"><%=flat[i].fname%></p>
+                    </div>
+                    
+                </div>
+                <div class="btni">
+                    <div class="btn">edit</div>
+                 <div class="btn">delete</div>
+                </div>
+                 
+            </div> -->
+        <!-- </div> -->
+        <%}}else{%>
+            <p>no data</p>
+            <%}%>
+    </div>
+    </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      h1 {
+        font-style: normal;
+        font-weight: bolder;
+      }
+
+      .kkl {
+        background-color: rgb(219, 233, 245);
+        border: 4px solid black;
+        width: 500px;
+        height: 200px;
+        margin-top: 100px;
+      }
+
+      .kkl img {
+        margin-top: 3px;
+        display: block;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      .One {
+        border: 2px solid rgb(57, 83, 214);
+        width: 50%;
+        margin-top: 5px;
+        margin-left: 2px;
+        padding: auto;
+      }
+
+      .btnii {
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1>MY PROFILE</h1>
+
+      <div class="kkl">
+        <img
+          src="https://tse1.mm.bing.net/th?id=OIP.awAiMS1BCAQ2xS2lcdXGlwHaHH&pid=Api&rs=1&c=1&qlt=95&w=119&h=114"
+          alt=""
+        />
+        <table class="One">
+          <tr>
+            <td><b>UserName:</b></td>
+            <td><%=user.name%></td>
+          </tr>
+          <tr>
+            <td><b>Contact:</b></td>
+            <td><%=user.contact%></td>
+          </tr>
+          <tr>
+            <td><b>Email:</b></td>
+            <td><%=user.email%></td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html> -->

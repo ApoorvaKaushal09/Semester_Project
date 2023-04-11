@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Information</title>
+    <style>
+      /* CSS styles for the page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      #user-info {
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        flex: 1 1 5%;
+        margin-right: 20px;
+      }
+      #user-info h1 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+      #user-info p {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      #flat-list {
+        margin: 20px;
+        background-color: #ffffff;
+        /* padding: 20px; */
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        flex: 1 1 45%;
+      }
+      #flat-list h2 {
+        font-size: 20px;
+        margin-top: 0;
+      }
+      .flat-card {
+        background-color: #ffffff;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .flat-card-image {
+        flex: 1 1 40%;
+        margin-right: 20px;
+      }
+      .flat-card-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .flat-card-details {
+        flex: 1 1 60%;
+      }
+      .flat-card-details h3 {
+        font-size: 18px;
+        margin-top: 0;
+      }
+      .flat-card-details p {
+        font-size: 16px;
+        margin: 10px 0;
+      }
+     </style>
+     <script>
+      function redirectToFlatDetails(flatId) {
+    window.location.href = "/flats/" + flatId; // replace with the URL of your flat details page
+  }
+    </script>
+    <link rel="stylesheet" href="..//style1.css">
+    <link rel="stylesheet" href="..//style.css">
+  </head>
+  <body>
+    <%if(user!=''){%>
+    <div id="user-info">
+        <h2 style="font-size: 40px;">User Details</h2>
+        <div class="card1">
+            
+            <div class="card_profile_img"></div>
+            <div class="user_details">
+                <h3><%=user.name%></h3>
+                <p class="info">User</p>
+            </div>
+            <div class="card_count">
+                <div class="count">
+                    <div class="fans">
+                        <h3>Email:</h3>
+                        <p class="info"><%=user.email%></p>
+                    </div>
+                    <div class="following">
+                        <h3>Contact</h3>
+                        <p class="info"><%=user.contact%></p>
+                    </div>
+                    <!-- <div class="post">
+                        <h3>552</h3>
+                        <p class="info">Posts</p>
+                    </div> -->
+                </div>
+                <!-- <div class="btni">
+                    <div class="btn">edit</div>
+                 <div class="btn">delete</div>
+                </div> -->
+                 
+            </div>
+        </div>
+    </div>
+    <%}else{%>
+      <p style="color:
+      red;">No record Found</p>
+      <%}%>
+      
+    <%if(flat!=''){%>
+        <%for(let i=0; i < flat.length ; i++){ %>
+
+          <div id="flat-list"></div>
+
+              <h2 style="font-size: 40px;margin-bottom: 10px;">Flat Details</h2>
+        <!-- <div class="card1"> -->
+                <div class="wrapper" style="height:250px; margin: 0px; width:99%; margin-left:4px;">
+                    <div class="product-img" style="height:250px">
+                      <img src="../uploads/<%=flat[i].image[0]%>" alt="" height="250px" width="320px" >
+                      
+                    </div>
+            <div class="product-info" style="height: 250px;">
+                <div class="product-text" style="height: 250px;text-align: left;width: 560px;">
+                  <h1><%= flat[i].fcity %></h1>
+                  <h2><%= flat[i].fname %></h2>
+                  <p>  <%= flat[i].description %><br>
+                  <strong>Address:</strong> <%= flat[i].floc %> 
+                  
+                     <br><strong>Size</strong> <%= flat[i].size %></p>
+                     <div style="display: flex; flex-direction: row;">
+                     <div class="btn " style="height: 40px;width: 150px; margin-left: 165px;margin-bottom: 10px" onclick="redirectToFlatDetails('<%= flat[i].id %>')">
+                    
+                     <a href="/edit/<%= flat[i]._id %>" style="text-decoration:none; color:black;">update</a>
+                    </div>
+                    <div class="btn " style="height: 40px;width: 150px; margin-bottom: 10px" onclick="redirectToFlatDetails('<%= flat[i].id %>')">
+                    
+                      <a href="/delete/<%= flat[i]._id %>" style="text-decoration:none; color:black;">Delete</a>
+                     </div>
+                  <div class="btn " style="height: 40px;width: 150px; margin-bottom: 10px" onclick="redirectToFlatDetails('<%= flat[i].id %>')">
+                    
+                    <button type="button">
+                            view Flat
+                    </button>
+                  </div>
+                </div>
+                </div>
+                
+                <!-- <div class="product-price-btn">
+                  <p><span><%= flat[i].fprice %></span>Rs.</p>
+                  <button type="button" onclick="redirectToFlatDetails('<%= flat[i].id %>')">View Flat</button>
+                  <button type="button" >View Flat</button>
+                </div> -->
+                </div>
+                
+                </div>
+                
+              </div>
+             
+    <!-- <div id="flat-list">
+      <h2 style="font-size: 50px;">Uploaded Flats</h2>
+      <div class="flat-card">
+        <div class="flat-card-image">
+            <img class="card-img-top" src="../uploads/<%=flat[i].image[0]%>" alt="Card image" style="width:60%">
+        </div>
+        <div class="flat-card-details">
+            <h3>Flat 1</h3>
+            <p><%= flat[i].fcity %></p>
+            <p><%=flat[i].fname %></p>
+            <p><%= flat[i].floc %> </p>
+        </div>
+      </div> -->
+      <!-- <div class="flat-card">
+        <h3>Flat 2</h3>
+        <p>Description of Flat 2</p>
+        <p>Price: $1200</p>
+      </div>
+      <div class="flat-card">
+        <h3>Flat 3</h3>
+        <p>Description of Flat 3</p>
+        <p>Price: $900</p>
+      </div>
+      <div class="flat-card">
+        <h3>Flat 4</h3>
+        <p>Description of Flat 4</p>
+        <p>Price: $1500</p>
+      </div> -->
+    
+    <%}}else{%>
+      <div id="flat-list">
+
+      <h2 style="font-size: 40px;margin-bottom: 10px; text-align: centre;">no data found</h2>
+    </div>
+        <%}%>
+      </div>
+  </body>
+</html>

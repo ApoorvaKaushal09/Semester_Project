@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const ejs = require("ejs");
-
+// var jwt = require('jsonwebtoken');
 // const bodyParser = require('body-parser')
 
 const multer  = require('multer')
@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 
 const app = express()
 const port = 3000
-const {collection, collection2,collection3} = require("./mongodb");
+const {collection, collection2,collection3,collection4} = require("./mongodb");
 const { param } = require('express-validator');
 
 app.use(express.json())
@@ -33,20 +33,7 @@ var Storage = multer.diskStorage({
 var upload=multer({
   storage:Storage
 });
-// .array('file',12)
-// var Storage1 = multer.diskStorage({
-//   destination: "./public/propDoc/",
-//   filename:  (req, file, cb) =>{
-//     cb(null, file.fieldname + "_" + Date.now()+path.extname(file.originalname));
-//   }
-// });
-// var upload=multer({
-//   storage:Storage
-// }).single("pdfFile");
 
-// var upload=multer({
-//   storage:Storage
-// }).single('file');
 
 
 app.get('/flats',(req,res)=>  {
@@ -139,6 +126,7 @@ app.post("/sell",upload .fields([{name:"pdfFile",maxCount:1},{name:"imageFile",m
     description: req.body.description,
     fname: req.body.fname,
     fcontact: req.body.fcontact,
+    femail: req.body.email,
     floc: req.body.floc,
     fstate: req.body.fstate,
     fcity: req.body.fcity,
@@ -246,6 +234,89 @@ app.get('/flats/:id',(req,res)=>  {
 })
 
 
+app.get("/dash/:id", async (req, res) => {
+  const user = await collection.findById(req.params.id);
+  var email=user.email;
+    const flat = await collection2.find({femail:email});
+  //   console.log(user);
+    
+  //   console.log(flat);
+  //   console.log(req.params.id);
+  try {   
+    res.render("dashboard", { user,flat });
+  } catch (err) {
+    console.log("here");
+    res.status(500).json(err);
+  }
+  // res.render("dash"), { route: "/dash" };
+});
+
+app.get("/delete/:id",async (req,res)=>  {
+  // var del=collection2.remove({_id:req.params.id});
+  const id=req.params.id
+  try {
+    await collection2.findByIdAndDelete(id);
+    res.redirect('/dashboard');
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+})
+// app.get('/edit/:id',async (req,res)=>  {
+//   const id=req.params.id
+//   try {
+//     var edit = await collection2.findById(id);
+//     res.render('edit',{edit,title:"edit the records"});
+//   } catch (err) {
+//     console.error(err);
+//     res.sendStatus(500);
+//   }
+//   }
+// )
+// app.post('/update/',async (req,res)=>  {
+//   // const id=req.params.id
+//   const update={
+//     description: req.body.description,
+//       fname: req.body.fname,
+//       fcontact: req.body.fcontact,
+//       femail: req.body.email,
+//       floc: req.body.floc,
+//       fstate: req.body.fstate,
+//       fcity: req.body.fcity,
+//       fprice: req.body.fprice,
+//       ftype: req.body.ftype,
+//       furnish: req.body.furnish,
+//       size: req.body.size
+//   }
+//   collection2.findByIdAndUpdate(req.body.id, update, { new: true })
+//   .then(updatedDocument => {
+//     console.log(`Updated document: ${updatedDocument}`);
+//     res.redirect('/');
+//   })
+//   .catch(err => {
+//     console.error(`Failed to update document: ${err}`);
+//   });
+  // try {
+  //   var edit = await collection2.findByIdAndUpdate(req.body.id,$set{ description: req.body.description,
+  //     fname: req.body.fname,
+  //     fcontact: req.body.fcontact,
+  //     femail: req.body.email,
+  //     floc: req.body.floc,
+  //     fstate: req.body.fstate,
+  //     fcity: req.body.fcity,
+  //     fprice: req.body.fprice,
+  //     ftype: req.body.ftype,
+  //     furnish: req.body.furnish,
+  //     size: req.body.size
+  //     });
+  //     console.log("updated")
+  //     res.redirect('/');
+  // } catch (err) {
+  //   console.error(err);
+  //   res.sendStatus(500);
+  // }
+//   }
+// )
 
 
 app.listen(process.env.PORT || port , () => {

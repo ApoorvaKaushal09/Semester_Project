@@ -42,7 +42,10 @@ const flatSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-  
+  femail:{
+    type:String,
+    required:true,
+  },
     floc: {
       type: String,
       required: true,
@@ -98,9 +101,31 @@ const uplaodschema=new mongoose.Schema({
   // }
 
 });
+const tschema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+
+  loc: {
+    type: String,
+    required: true,
+  },
+
+  views: {
+    type: String,
+    required: true,
+  },
+});
+
+
+
+const collection4 = new mongoose.model("testimonials", tschema);
+
+
 
 
 const collection = new mongoose.model("userSignup", SignupSchema)
 const collection2 = new mongoose.model("flatDetails", flatSchema)
 const collection3= new mongoose.model("uploadfiles",uplaodschema)
-module.exports = {collection, collection2,collection3};
+module.exports = { collection, collection2, collection3, collection4 };

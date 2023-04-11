@@ -1,0 +1,193 @@
+<%- include("partials/header"); -%> 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testimonials</title>
+    <link rel="stylesheet" href="..//product.css">
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+    <style>
+    
+
+      body{
+        background-color: aliceblue;
+      }
+
+      
+      .d-block{
+        
+        border-radius: 50%;
+        height: 300px;
+        width:400px;
+        border-color: black;
+
+
+      }
+
+      .carousel-caption d-none d-md-block
+      {
+        border-color:3px black;
+       
+      }
+
+      .one{
+        margin-top: 10px;
+        border-color:3px black;
+        color:rgb(251, 249, 249);
+        font-weight: bolder;
+        font-size: large;
+      }
+
+      #carouselExampleCaptions{
+        background-color: blueviolet;
+        border-color: 2px solid black;
+
+      }
+    </style>
+  </head>
+  
+  <body>
+    
+    <center><u><h1 class="container" style="font-weight: bolder;">TESTIMONIALS</h1></u></center>
+    <hr>
+    <center>
+    <div id="carouselExampleCaptions" class="carousel slide" id="funn">
+      <div class="carousel-indicators">
+        <% for (let i = 0; i < x.length; i++) { %>
+          <% if (i === 0) { %>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<%= i %>" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <% } else { %>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<%= i %>" aria-label="Slide 2"></button>
+        <% } %>
+        <%}%>
+      </div>
+      <div class="carousel-inner">
+        <% for (let i = 0; i < x.length; i++) { %>
+          <% if (i === 0) { %>
+        <div class="carousel-item active">
+          <img src="https://static.wixstatic.com/media/43c856946bae4791986cd49c5bec28b2.jpg/v1/crop/x_71,y_61,w_652,h_712/fill/w_275,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/man%208.jpg" class="d-block w" alt="..." height="300px" width="600px" >
+          <div>
+           <div class="one">
+            <h5>I am <%=x[i].name%> from <%=x[i].loc%>. <%=x[i].views%> </h5>
+            <h3 style="background-color: rgb(0, 11, 8);">...</h3>
+            </div>
+          </div>
+        </div>
+        <% } else { %>
+        <div class="carousel-item">
+          <% if (i %2 == 0) { %>
+          <img src="https://static.wixstatic.com/media/6848fde432ce40e6a7ca6f5a8191fdce.jpg/v1/crop/x_104,y_72,w_626,h_683/fill/w_602,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/woman%208.jpg" class="d-block w" alt="..." height="300px" width="600px" >
+          <% } else { %>
+            <img src="https://static.wixstatic.com/media/75c368b519c345e087e77bd437ec1050.jpg/v1/crop/x_57,y_51,w_639,h_697/fill/w_275,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/woman%2012.jpg" class="d-block w" alt="..." height="300px" width="600px" >
+            <%}%>
+          <div>
+            <div class="one">
+            <h5><%=x[i].name%> | <%=x[i].loc%>. <%=x[i].views%> </h5>
+           
+             <h3 style="background-color: rgb(0, 11, 8);">...</h3>
+             </div>
+           </div>
+         </div>
+        <%}%>
+        <%}%>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </center>
+          
+
+          <!-- Carousel HTML code -->
+
+  <!-- <section class="hero" id="home">
+  <div class="container1" ></div>
+  <% for( let index = 0; index < x.length; index++ ) { %> -->
+
+  <!--<div style="display:inline">
+
+  
+          
+    <center>  
+      
+            <div>
+              <div>
+                <div  style="background-color:white; border:10px black">
+                  <img src="https://tse3.explicit.bing.net/th?id=OIP.wFpeXzKoEfsFZz-dRoN49wHaHC&pid=Api&P=0" class="d-block w-20" alt="..." width="100px" >
+                  <h5><%=x[index].name%></h5>
+                  <h5><%=x[index].loc%></h5>
+                  <p><%=x[index].views%></p>
+                </div>
+               
+                 
+                
+              </div>
+              
+             </div>
+             
+             
+           
+ 
+            </div>
+        
+      </center>
+       <% } %> -->
+
+          <hr>
+          <br>
+
+ <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+    <li class="nav-item" role="presentation">  <h2 class="tab-login" >ADD YOURS</h2>
+    </li>
+  </ul>
+  <!-- Pills navs -->
+  
+    <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+        <form action="/testi" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+  
+        
+  
+  
+        <!-- Email input -->
+        <div class="form-outline mb-2">
+            <label class="form-label" for="registerEmail">Name</label>
+          <input type="text" id="registerEmail" class="form-control" name="name"/>
+          
+        </div>
+
+        <div class="form-outline mb-2">
+          <label class="form-label" for="registerEmail">location</label>
+        <input type="text" id="registerEmail" class="form-control" name="loc"/>
+        
+      </div>
+
+      <div class="form-outline mb-2">
+        <label class="form-label" for="registerEmail">Views</label>
+      <input type="text" id="registerEmail" class="form-control" name="views"/>
+      
+    </div>
+  
+        <!-- Password input -->
+        
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-3" style="border:none; background-color: hsl(9, 100%, 62%); color: black; width: 70%;margin: auto;">ADD TESTIMONIALS</button>
+      </form>
+    </div>
+  </div>
+  <!-- Pills content -->
+                
+             <!-- </div> -->
+            
+            <!-- </form> -->
+          </div>
+    </section>   
+
+  </body>
+</html>
+
+<%- include("partials/footer"); -%> 

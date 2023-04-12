@@ -22,7 +22,8 @@ This system is designed to ease the difficulties of people, by providing website
 
 ## SOFTWARES NEED TO INSTALL 
 
-MongoDB Compass
+MongoDB Compass 
+
 Node.js 
 
 ## BUILT USING
@@ -61,7 +62,7 @@ Node.js
 2. Install all the dependencies with the `Node Package Manager(npm)` listed in the `package.json` file using the command.
 
    ```sh
-   npm install
+   npm install {all the packages seperated by space}
    ```
 3. Install Nodemon.
 
@@ -72,6 +73,7 @@ Node.js
 
       ```sh
    npm start
+   nodemone index.js
    ```
    
 5. Port of running server 3000.
